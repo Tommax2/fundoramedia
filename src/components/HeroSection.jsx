@@ -18,33 +18,33 @@ function HeroSection({ tab, onStart, onExplore }) {
   return (
     <section className="hero reveal">
       <div className="hero-left">
-        <p className="eyebrow">{isFund ? "Crowdfunding platform" : "Book authoring studio"}</p>
+        <p className="eyebrow">{isFund ? "Creative marketing agency" : "Author marketing studio"}</p>
         <h1>
           {isFund ? (
             <>
-              Back ideas that <em>shift culture</em> and change communities
+              We market campaigns that <em>get funded</em> and grow audiences
             </>
           ) : (
             <>
-              Build your book <em>in public</em> with readers behind you
+              We grow authors who <em>build readers</em> before launch day
             </>
           )}
         </h1>
         <p className="hero-copy">
           {isFund
-            ? "From hardware inventions to local projects, fund campaigns with transparent milestones and audience momentum."
-            : "Write in chapters, ship drafts weekly, and turn audience feedback into stronger storytelling before launch day."}
+            ? "From strategy and branding to paid ads and community growth — we handle the full marketing system behind your campaign launch."
+            : "From book positioning and branding to promotion, ads, and media outreach — we build the marketing engine behind your book's success."}
         </p>
         <div className="hero-actions">
-          <button className="hero-primary" onClick={onStart}>Start now</button>
-          <button className="hero-secondary" onClick={onExplore}>Explore creators</button>
+          <button className="hero-primary" onClick={onStart}>Get started</button>
+          <button className="hero-secondary" onClick={onExplore}>See our work</button>
         </div>
       </div>
 
       <div className="hero-panel">
         <div className="hero-panel-top hero-panel-meta">
-          <strong>{isFund ? "Launch momentum" : "Reader momentum"}</strong>
-          <span>Live preview</span>
+          <strong>{isFund ? "Client campaign results" : "Client book results"}</strong>
+          <span>Recent work</span>
         </div>
         <div className="hero-media-stack" aria-hidden="true">
           {heroMedia.map((image, index) => (
@@ -56,12 +56,12 @@ function HeroSection({ tab, onStart, onExplore }) {
             />
           ))}
           <div className="hero-stat-chip chip-a">
-            <p>{isFund ? "Email opt-ins" : "Early readers"}</p>
+            <p>{isFund ? "Leads generated" : "Pre-launch readers"}</p>
             <strong>{isFund ? "+1,284" : "+742"}</strong>
           </div>
           <div className="hero-stat-chip chip-b">
-            <p>{isFund ? "Ad CTR" : "Chapter saves"}</p>
-            <strong>{isFund ? "4.3%" : "68%"}</strong>
+            <p>{isFund ? "Ad return (ROAS)" : "Email open rate"}</p>
+            <strong>{isFund ? "4.3×" : "68%"}</strong>
           </div>
         </div>
       </div>

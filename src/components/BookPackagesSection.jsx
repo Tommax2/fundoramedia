@@ -74,7 +74,7 @@ function BookPackagesSection() {
   return (
     <section className="book-packages reveal" id="book-packages">
       <div className="book-packages-head">
-        <p className="eyebrow">Book Promotion Packages</p>
+        <p className="eyebrow">Author Marketing Packages</p>
         <h2>Choose Your Growth Level</h2>
       </div>
       <div className="book-packages-grid">

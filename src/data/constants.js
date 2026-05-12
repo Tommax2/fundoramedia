@@ -1,6 +1,6 @@
 export const TABS = [
-  { id: "fund", label: "Campaigns" },
-  { id: "book", label: "Authoring" }
+  { id: "fund", label: "Launch Marketing" },
+  { id: "book", label: "Book Marketing" }
 ];
 
 export const FUND_CATEGORIES = ["All", "Tech", "Arts", "Community", "Games", "Health"];

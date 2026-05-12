@@ -86,8 +86,8 @@ function CrowdfundingPackagesSection() {
   return (
     <section className="crowd-packages reveal" id="crowd-packages">
       <div className="crowd-packages-head">
-        <p className="eyebrow">Crowdfunding Campaign Packages</p>
-        <h2>From Validation to Full-Scale Funding Growth</h2>
+        <p className="eyebrow">Marketing Packages</p>
+        <h2>From Strategy to Full-Scale Campaign Growth</h2>
       </div>
       <div className="crowd-packages-grid">
         {PACKAGES.map((pkg) => (

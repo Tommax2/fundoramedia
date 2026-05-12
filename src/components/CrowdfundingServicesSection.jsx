@@ -30,17 +30,17 @@ const SERVICES = [
   {
     title: "Email Marketing & Automation",
     image: "https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=640&q=60&fm=webp",
-    items: ["Pre-launch sequences", "Launch announcement emails", "Backer retention emails", "Upsell/downsell flows"]
+    items: ["Pre-launch sequences", "Launch announcement emails", "Supporter retention emails", "Upsell/downsell flows"]
   },
   {
-    title: "Backer Outreach & Community Building",
+    title: "Audience Outreach & Community Building",
     image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=640&q=60&fm=webp",
     items: ["Influencer outreach", "Affiliate marketing setup", "Community engagement (Discord, Telegram)", "Referral campaigns"]
   },
   {
     title: "Campaign Management (Live Phase)",
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=640&q=60&fm=webp",
-    items: ["Daily campaign optimization", "Update posting", "Comment/backer management", "Stretch goal planning"]
+    items: ["Daily campaign optimisation", "Update posting", "Audience & supporter management", "Stretch goal planning"]
   },
   {
     title: "Post-Campaign Services",
@@ -55,8 +55,8 @@ function CrowdfundingServicesSection() {
   return (
     <section className="crowd-services reveal" id="crowd-services">
       <div className="crowd-services-head">
-        <p className="eyebrow">Crowdfunding Campaign</p>
-        <h2>Subdivision Services</h2>
+        <p className="eyebrow">What we do</p>
+        <h2>Campaign Marketing Services</h2>
       </div>
 
       <div className="service-carousel">

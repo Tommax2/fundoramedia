@@ -27,7 +27,7 @@ function DiscoverSection({ id, categories, selectedCategory, onCategory, title, 
         <div className="section-head">
           <div>
             <h3>{title}</h3>
-            <p>Curated projects with strong supporter activity</p>
+            <p>Campaigns and authors we've helped grow</p>
           </div>
           <div className="section-head-actions">
             <span className="live-pill">Live now</span>

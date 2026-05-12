@@ -66,7 +66,7 @@ function App() {
               categories={FUND_CATEGORIES}
               selectedCategory={fundCategory}
               onCategory={setFundCategory}
-              title="Trending right now"
+              title="Featured client work"
               cards={filteredFundCards}
               onViewAll={() => document.getElementById("crowd-services")?.scrollIntoView({ behavior: "smooth" })}
             />
