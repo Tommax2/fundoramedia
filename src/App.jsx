@@ -6,6 +6,8 @@ import DiscoverSection from "./components/DiscoverSection";
 import BookPromotionSection from "./components/BookPromotionSection";
 import BookPackagesSection from "./components/BookPackagesSection";
 import BlogTeaser from "./components/BlogTeaser";
+import TestimonialsSection from "./components/TestimonialsSection";
+import AboutSection from "./components/AboutSection";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import TopNav from "./components/TopNav";
@@ -94,6 +96,8 @@ function App() {
           </>
         )}
 
+        <TestimonialsSection />
+        <AboutSection />
         <BlogTeaser />
         <Footer />
       </div>

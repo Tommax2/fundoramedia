@@ -1875,6 +1875,225 @@ body {
   .blog-notify-form button {
     width: 100%;
   }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* ── Testimonials ── */
+.testimonials {
+  border-top: 1px solid var(--line);
+  padding: 56px 22px 60px;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(6, 95, 70, 0.06), transparent 30%),
+    radial-gradient(circle at 92% 80%, rgba(251, 191, 36, 0.07), transparent 30%),
+    linear-gradient(180deg, #F9FAFB, #ffffff);
+}
+
+.testimonials-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.testimonials-head {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.testimonials-head h2 {
+  margin: 0;
+  font: 500 clamp(1.5rem, 2.4vw, 2.2rem) / 1.1 "DM Serif Display", Georgia, serif;
+}
+
+.testimonials-head p {
+  color: var(--muted);
+  margin: 8px 0 0;
+  font-size: 0.92rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.testimonial-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  display: grid;
+  gap: 12px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-stars {
+  display: flex;
+  gap: 3px;
+}
+
+.testimonial-stars span {
+  color: #FBBF24;
+  font-size: 0.9rem;
+}
+
+.testimonial-quote {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+.testimonial-quote::before {
+  content: "\201C";
+  font-size: 1.4rem;
+  color: #065F46;
+  font-style: normal;
+  line-height: 0;
+  vertical-align: -0.3em;
+  margin-right: 2px;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.testimonial-name {
+  font-weight: 700;
+  font-size: 0.84rem;
+  color: var(--ink);
+}
+
+.testimonial-role {
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+.testimonial-tag {
+  margin-top: 4px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #065F46;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  border-radius: 999px;
+  padding: 2px 8px;
+  width: max-content;
+}
+
+/* ── About Section ── */
+.about-section {
+  border-top: 1px solid var(--line);
+  padding: 56px 22px 60px;
+  background:
+    radial-gradient(circle at 92% 8%, rgba(251, 191, 36, 0.08), transparent 32%),
+    radial-gradient(circle at 6% 80%, rgba(6, 95, 70, 0.07), transparent 35%),
+    linear-gradient(180deg, #ffffff, #F9FAFB);
+}
+
+.about-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 52px;
+  align-items: start;
+}
+
+.about-text h2 {
+  margin: 0 0 16px;
+  font: 500 clamp(1.5rem, 2.4vw, 2.2rem) / 1.1 "DM Serif Display", Georgia, serif;
+}
+
+.about-body {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 14px;
+  font-size: 0.92rem;
+}
+
+.about-contact-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.about-contact-link {
+  color: #065F46;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: opacity 0.14s ease;
+}
+
+.about-contact-link:hover {
+  opacity: 0.75;
+}
+
+.about-contact-sep {
+  color: var(--muted);
+}
+
+.about-pillars {
+  display: grid;
+  gap: 14px;
+}
+
+.about-pillar {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.about-pillar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about-pillar-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.about-pillar h4 {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+}
+
+.about-pillar p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.5;
 }
 
 .reveal {

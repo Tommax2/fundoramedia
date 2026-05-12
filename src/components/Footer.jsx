@@ -52,6 +52,7 @@ function Footer() {
             <div className="footer-col">
               <h4>Connect</h4>
               <a href="mailto:hello@fundoramedia.com">hello@fundoramedia.com</a>
+              <a href="tel:+2348000000000">+234 800 000 0000</a>
               <a href="#">Twitter / X</a>
               <a href="#">LinkedIn</a>
               <a href="#">Instagram</a>
@@ -67,6 +68,8 @@ function Footer() {
             <button onClick={() => setActivePolicy("terms")}>Terms of Service</button>
             <span>·</span>
             <button onClick={() => setActivePolicy("refund")}>Refund Policy</button>
+            <span>·</span>
+            <button onClick={() => setActivePolicy("delivery")}>Service Delivery</button>
           </div>
           <span className="footer-tagline">Built for launch-ready creators.</span>
         </div>
