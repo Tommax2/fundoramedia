@@ -1941,6 +1941,14 @@ body {
     grid-template-columns: 1fr;
     gap: 28px;
   }
+
+  .about-section {
+    padding: 40px 18px 44px;
+  }
+
+  .about-pillar {
+    padding: 14px;
+  }
 }
 
 /* ── Testimonials ── */
@@ -2096,22 +2104,6 @@ body {
   flex-wrap: wrap;
 }
 
-.about-contact-link {
-  color: #065F46;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 0.88rem;
-  transition: opacity 0.14s ease;
-}
-
-.about-contact-link:hover {
-  opacity: 0.75;
-}
-
-.about-contact-sep {
-  color: var(--muted);
-}
-
 .about-pillars {
   display: grid;
   gap: 14px;
@@ -2135,10 +2127,31 @@ body {
 }
 
 .about-pillar-icon {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   flex-shrink: 0;
   line-height: 1;
-  margin-top: 2px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ECFDF5;
+}
+
+.about-pillar-icon--leaf {
+  background: #ECFDF5;
+  box-shadow: 0 4px 10px rgba(6, 95, 70, 0.12);
+}
+
+.about-pillar-icon--blue {
+  background: #EFF6FF;
+  box-shadow: 0 4px 10px rgba(52, 79, 168, 0.1);
+}
+
+.about-pillar-icon--gold {
+  background: #FFFBEB;
+  box-shadow: 0 4px 10px rgba(251, 191, 36, 0.15);
 }
 
 .about-pillar h4 {
@@ -2151,6 +2164,27 @@ body {
   font-size: 0.8rem;
   color: var(--muted);
   line-height: 1.5;
+}
+
+.about-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #ECFDF5, #D1FAE5);
+  border: 1px solid #A7F3D0;
+  border-radius: 999px;
+  color: #065F46;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.about-email-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(6, 95, 70, 0.18);
+  background: linear-gradient(135deg, #D1FAE5, #A7F3D0);
 }
 
 .reveal {
@@ -2406,10 +2440,6 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .top-nav {
-    position: static;
-  }
-
   .top-nav-center {
     width: 100%;
   }
@@ -2534,6 +2564,36 @@ body {
 }
 
 @media (max-width: 620px) {
+  .about-section {
+    padding: 28px 14px 32px;
+  }
+
+  .about-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .about-body {
+    font-size: 0.86rem;
+  }
+
+  .about-email-btn {
+    font-size: 0.82rem;
+    padding: 9px 14px;
+    gap: 6px;
+  }
+
+  .about-pillar {
+    gap: 12px;
+    padding: 13px;
+  }
+
+  .about-pillar-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+  }
+
   .testimonials {
     padding: 28px 14px 32px;
   }
