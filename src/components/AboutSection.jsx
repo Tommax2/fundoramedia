@@ -34,15 +34,6 @@ function AboutSection() {
           <p className="about-body">
             Founded by marketers with hands-on experience running product launches and promotional campaigns across digital platforms and Amazon KDP, we understand what it takes to stand out in a competitive landscape and convert interest into action.
           </p>
-          <div className="about-contact-row">
-            <a href="mailto:hello@fundoramedia.com" className="about-email-btn">
-              <svg width="15" height="15" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M2 5.5A1.5 1.5 0 013.5 4h13A1.5 1.5 0 0118 5.5v9A1.5 1.5 0 0116.5 16h-13A1.5 1.5 0 012 14.5v-9z" stroke="currentColor" strokeWidth="1.5"/>
-                <path d="M2 6l8 5 8-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
-              hello@fundoramedia.com
-            </a>
-          </div>
         </div>
         <div className="about-pillars">
           {PILLARS.map((p) => (
@@ -54,6 +45,15 @@ function AboutSection() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="about-contact-row">
+          <a href="mailto:hello@fundoramedia.com" className="about-email-btn">
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M2 5.5A1.5 1.5 0 013.5 4h13A1.5 1.5 0 0118 5.5v9A1.5 1.5 0 0116.5 16h-13A1.5 1.5 0 012 14.5v-9z" stroke="currentColor" strokeWidth="1.5"/>
+              <path d="M2 6l8 5 8-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+            hello@fundoramedia.com
+          </a>
         </div>
       </div>
     </section>

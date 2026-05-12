@@ -594,6 +594,7 @@ body {
 .card {
   border: 1px solid #ddcfbc;
   border-radius: 16px;
+  min-width: 0;
   background:
     radial-gradient(circle at 100% 0, rgba(114, 144, 255, 0.14), transparent 32%),
     linear-gradient(165deg, #fffefc, #fff6ea);
@@ -787,6 +788,7 @@ body {
   border-radius: 16px;
   padding: 16px;
   background: #fff;
+  min-width: 0;
 }
 
 .plan-top {
@@ -916,17 +918,10 @@ body {
   contain-intrinsic-size: 1300px;
 }
 
-.book-services-head h2 {
-  margin: 0;
-  font: 500 clamp(1.35rem, 2vw, 1.9rem) / 1.1 "DM Serif Display", Georgia, serif;
-}
-
-.crowd-services-head h2 {
-  margin: 0;
-  font: 500 clamp(1.35rem, 2vw, 1.9rem) / 1.1 "DM Serif Display", Georgia, serif;
-}
-
-.crowd-packages-head h2 {
+.book-services-head h2,
+.crowd-services-head h2,
+.crowd-packages-head h2,
+.book-packages-head h2 {
   margin: 0;
   font: 500 clamp(1.35rem, 2.2vw, 2rem) / 1.1 "DM Serif Display", Georgia, serif;
 }
@@ -1179,6 +1174,7 @@ body {
 .site-footer {
   position: relative;
   overflow: clip;
+  overflow-x: hidden;
   background: linear-gradient(170deg, #131110, #0d0b09);
   color: #c8bfb3;
 }
@@ -1518,11 +1514,6 @@ body {
   background: linear-gradient(180deg, #fff8ef, #fffdf8);
   content-visibility: auto;
   contain-intrinsic-size: 1200px;
-}
-
-.book-packages-head h2 {
-  margin: 0;
-  font: 500 clamp(1.35rem, 2.2vw, 2rem) / 1.1 "DM Serif Display", Georgia, serif;
 }
 
 .book-packages-grid {
@@ -1961,17 +1952,17 @@ body {
   }
 
   /* About */
-  .about-inner {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
   .about-section {
     padding: 36px 16px 40px;
   }
 
+  .about-inner {
+    gap: 24px;
+  }
+
   .about-text h2 {
     font-size: 1.4rem;
+    margin-top: 10px;
     margin-bottom: 12px;
   }
 
@@ -1989,9 +1980,16 @@ body {
     justify-content: center;
   }
 
-  .about-pillar {
-    padding: 14px;
+  .about-pillars {
+    grid-template-columns: 1fr;
     gap: 12px;
+  }
+
+  .about-pillar {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px;
   }
 }
 
@@ -2123,10 +2121,9 @@ body {
 .about-inner {
   max-width: 960px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 52px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
   min-width: 0;
 }
 
@@ -2134,11 +2131,14 @@ body {
   min-width: 0;
   overflow-wrap: break-word;
   word-break: break-word;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
 .about-text h2 {
-  margin: 0 0 16px;
-  font: 500 clamp(1.35rem, 4vw, 2.2rem) / 1.15 "DM Serif Display", Georgia, serif;
+  margin: 8px 0 16px;
+  font: 500 clamp(1.35rem, 2.5vw, 2.2rem) / 1.15 "DM Serif Display", Georgia, serif;
   overflow-wrap: break-word;
 }
 
@@ -2154,13 +2154,15 @@ body {
   display: flex;
   gap: 10px;
   align-items: center;
-  margin-top: 20px;
+  justify-content: center;
   flex-wrap: wrap;
   min-width: 0;
+  margin-top: 8px;
 }
 
 .about-pillars {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
   min-width: 0;
 }
@@ -2508,6 +2510,10 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .about-pillars {
+    grid-template-columns: 1fr;
+  }
+
   .top-nav-center {
     width: 100%;
   }
@@ -2538,9 +2544,6 @@ body {
 
 @media (max-width: 760px) {
   .top-nav {
-    position: sticky;
-    top: 0;
-    z-index: 25;
     flex-wrap: wrap;
     align-items: center;
     padding: 12px 16px;
@@ -2634,13 +2637,54 @@ body {
 }
 
 @media (max-width: 620px) {
+  /* ── Sections: padding ── */
+  .pricing {
+    padding: 20px 14px;
+  }
+
+  .pricing-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .book-services,
+  .crowd-services,
+  .crowd-packages,
+  .book-packages {
+    padding: 20px 14px 28px;
+  }
+
+  .consultation {
+    padding: 20px 14px 28px;
+  }
+
+  .blog-teaser {
+    padding: 32px 14px 36px;
+  }
+
+  .blog-teaser-inner {
+    gap: 24px;
+  }
+
+  .blog-teaser-title {
+    font-size: 1.3rem;
+  }
+
+  .blog-teaser-sub {
+    font-size: 0.84rem;
+  }
+
   /* ── About ── */
   .about-section {
     padding: 28px 14px 32px;
   }
 
+  .about-inner {
+    gap: 20px;
+  }
+
   .about-text h2 {
     font-size: 1.3rem;
+    margin-top: 12px;
   }
 
   .about-body {
@@ -2655,17 +2699,32 @@ body {
     justify-content: center;
   }
 
+  .about-pillars {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
   .about-pillar {
-    gap: 11px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
     padding: 12px;
   }
 
   .about-pillar-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 1.1rem;
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
     border-radius: 10px;
     flex-shrink: 0;
+  }
+
+  .about-pillar h4 {
+    font-size: 0.86rem;
+  }
+
+  .about-pillar p {
+    font-size: 0.78rem;
   }
 
   /* ── Testimonials ── */
@@ -2843,13 +2902,9 @@ body {
   }
 
   .footer-cols {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 18px;
     padding-top: 8px;
-  }
-
-  .footer-cols .footer-col:last-child {
-    grid-column: 1 / -1;
   }
 
   .footer-col h4 {
@@ -2871,15 +2926,6 @@ body {
 }
 
 @media (max-width: 420px) {
-  .footer-cols {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .footer-cols .footer-col:last-child {
-    grid-column: auto;
-  }
-
   .footer-stats {
     border-radius: 12px;
   }
