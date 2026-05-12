@@ -1939,15 +1939,35 @@ body {
 
   .about-inner {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
   }
 
   .about-section {
-    padding: 40px 18px 44px;
+    padding: 36px 16px 40px;
+  }
+
+  .about-text h2 {
+    font-size: 1.55rem;
+    margin-bottom: 12px;
+  }
+
+  .about-body {
+    font-size: 0.88rem;
+    margin-bottom: 12px;
+  }
+
+  .about-contact-row {
+    margin-top: 16px;
+  }
+
+  .about-email-btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .about-pillar {
     padding: 14px;
+    gap: 12px;
   }
 }
 
@@ -2171,6 +2191,7 @@ body {
   align-items: center;
   gap: 8px;
   padding: 10px 18px;
+  max-width: 100%;
   background: linear-gradient(135deg, #ECFDF5, #D1FAE5);
   border: 1px solid #A7F3D0;
   border-radius: 999px;
@@ -2470,7 +2491,9 @@ body {
 
 @media (max-width: 760px) {
   .top-nav {
-    position: static;
+    position: sticky;
+    top: 0;
+    z-index: 25;
     flex-wrap: wrap;
     align-items: center;
     padding: 12px 16px;
@@ -2565,26 +2588,31 @@ body {
 
 @media (max-width: 620px) {
   .about-section {
-    padding: 28px 14px 32px;
+    padding: 24px 14px 28px;
   }
 
   .about-text h2 {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
 
   .about-body {
-    font-size: 0.86rem;
+    font-size: 0.84rem;
   }
 
   .about-email-btn {
     font-size: 0.82rem;
-    padding: 9px 14px;
+    padding: 10px 14px;
     gap: 6px;
+    width: 100%;
+    justify-content: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .about-pillar {
     gap: 12px;
-    padding: 13px;
+    padding: 12px;
   }
 
   .about-pillar-icon {
@@ -2592,40 +2620,56 @@ body {
     height: 40px;
     font-size: 1.1rem;
     border-radius: 10px;
+    flex-shrink: 0;
   }
 
   .testimonials {
-    padding: 28px 14px 32px;
+    padding: 40px 18px 44px;
   }
 
   .testimonials-head {
-    margin-bottom: 20px;
+    margin-bottom: 28px;
   }
 
   .testimonials-head h2 {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
+    letter-spacing: -0.01em;
   }
 
   .testimonials-head p {
-    font-size: 0.84rem;
+    font-size: 0.86rem;
+    margin-top: 8px;
+  }
+
+  .testimonials-grid {
+    gap: 14px;
   }
 
   .testimonial-card {
-    padding: 14px;
-    gap: 10px;
-    border-radius: 12px;
+    padding: 18px;
+    gap: 12px;
+    border-radius: 14px;
   }
 
   .testimonial-quote {
-    font-size: 0.84rem;
+    font-size: 0.86rem;
+    line-height: 1.65;
   }
 
   .testimonial-quote::before {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+  }
+
+  .testimonial-author {
+    padding-top: 12px;
   }
 
   .testimonial-name {
-    font-size: 0.82rem;
+    font-size: 0.84rem;
+  }
+
+  .testimonial-role {
+    font-size: 0.76rem;
   }
 
   .hero-media-stack {
@@ -2706,26 +2750,36 @@ body {
 
   /* ── Footer ── */
   .footer-inner {
-    padding: 22px 16px 18px;
-    gap: 18px;
+    padding: 32px 18px 26px;
+    gap: 26px;
   }
 
-  .footer-stat {
-    padding: 12px 8px;
-  }
-
-  .footer-stat strong {
-    font-size: 1.2rem;
-  }
-
-  .footer-stat span {
-    font-size: 0.62rem;
-    letter-spacing: 0.08em;
+  .footer-brand {
+    gap: 12px;
   }
 
   .footer-brand-sub {
-    font-size: 0.74rem;
+    font-size: 0.78rem;
     max-width: 100%;
+    line-height: 1.6;
+  }
+
+  .footer-stats {
+    border-radius: 14px;
+  }
+
+  .footer-stat {
+    padding: 16px 10px;
+  }
+
+  .footer-stat strong {
+    font-size: 1.3rem;
+  }
+
+  .footer-stat span {
+    font-size: 0.64rem;
+    letter-spacing: 0.08em;
+    margin-top: 6px;
   }
 
   .footer-orb-1 {
@@ -2744,7 +2798,8 @@ body {
 
   .footer-cols {
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 20px;
+    padding-top: 8px;
   }
 
   .footer-cols .footer-col:last-child {
@@ -2752,26 +2807,27 @@ body {
   }
 
   .footer-col h4 {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    font-size: 0.72rem;
   }
 
   .footer-col a {
-    padding: 4px 0;
-    font-size: 0.78rem;
+    padding: 6px 0;
+    font-size: 0.82rem;
   }
 
   .footer-bottom {
-    padding: 12px 16px;
+    padding: 16px 18px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 3px;
+    gap: 4px;
   }
 }
 
 @media (max-width: 420px) {
   .footer-cols {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 16px;
   }
 
   .footer-cols .footer-col:last-child {
@@ -2783,11 +2839,11 @@ body {
   }
 
   .footer-stat {
-    padding: 10px 6px;
+    padding: 14px 8px;
   }
 
   .footer-stat strong {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .grid {
