@@ -14,7 +14,7 @@ function ConsultationSection({ tab }) {
     <section className="consultation reveal" id={isFund ? "crowd-consultation" : "book-consultation"}>
       <div className="consultation-intro">
         <p className="eyebrow">Free Consultation</p>
-        <h2>{isFund ? "Let's plan your winning campaign" : "Let's plan your book growth strategy"}</h2>
+        <h2>{isFund ? "Let's plan your launch marketing strategy" : "Let's plan your book growth strategy"}</h2>
         <p>
           Share a few details and our team will reach out with the best next steps, timeline, and budget options.
         </p>
@@ -37,7 +37,7 @@ function ConsultationSection({ tab }) {
             <option value="" disabled>
               Select a service
             </option>
-            <option>{isFund ? "Campaign strategy" : "Book launch strategy"}</option>
+            <option>{isFund ? "Launch strategy & planning" : "Book launch strategy"}</option>
             <option>{isFund ? "Paid ads management" : "Paid ads for books"}</option>
             <option>{isFund ? "Video production" : "Author branding"}</option>
             <option>Full package support</option>

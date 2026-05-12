@@ -53,7 +53,7 @@ const POLICIES = {
       },
       {
         heading: "2. Services",
-        body: "Fundora Creative Media provides crowdfunding campaign management, book promotion, marketing consulting, and related creative services. The specific scope of work for each engagement is agreed upon in writing before any payment is processed."
+        body: "Fundora Creative Media provides product launch marketing, book promotion, marketing consulting, and related creative services. The specific scope of work for each engagement is agreed upon in writing before any payment is processed."
       },
       {
         heading: "3. Payment",
@@ -73,7 +73,7 @@ const POLICIES = {
       },
       {
         heading: "7. Limitation of Liability",
-        body: "Fundora Creative Media is not liable for campaign funding outcomes, book sales figures, or any indirect or consequential losses. Our liability is limited to the total amount paid for the specific service in question."
+        body: "Fundora Creative Media is not liable for launch performance outcomes, book sales figures, or any indirect or consequential losses. Our liability is limited to the total amount paid for the specific service in question."
       },
       {
         heading: "8. Governing Law",

@@ -1,7 +1,7 @@
 import React from "react";
 import LazyBackground from "./LazyBackground";
 
-function DiscoverSection({ id, categories, selectedCategory, onCategory, title, cards, onViewAll }) {
+function DiscoverSection({ id, categories, selectedCategory, onCategory, title, cards, onViewAll, subtitle }) {
   const spotlight = cards[0];
   const hasCards = cards.length > 0;
   const toneBackground = {
@@ -27,11 +27,11 @@ function DiscoverSection({ id, categories, selectedCategory, onCategory, title, 
         <div className="section-head">
           <div>
             <h3>{title}</h3>
-            <p>Campaigns and authors we've helped grow</p>
+            <p>{subtitle || "Projects we've delivered results for"}</p>
           </div>
           <div className="section-head-actions">
-            <span className="live-pill">Live now</span>
-            <button onClick={onViewAll}>View all</button>
+            <span className="portfolio-tag">Client work</span>
+            <button onClick={onViewAll}>See our services</button>
           </div>
         </div>
 
@@ -48,12 +48,9 @@ function DiscoverSection({ id, categories, selectedCategory, onCategory, title, 
                 <span>{spotlight.tag}</span>
                 <h4>{spotlight.title}</h4>
                 <p>{spotlight.meta}</p>
-                <div className="meter">
-                  <i style={{ width: `${spotlight.progress}%` }} />
-                </div>
-                <small className="pulse-text">Momentum is rising this hour</small>
+                <span className="portfolio-result-pill">{spotlight.result}</span>
               </div>
-              <strong>{spotlight.value}</strong>
+              <div className="portfolio-service-chip">{spotlight.service}</div>
             </article>
 
             <div className="grid">
@@ -70,13 +67,7 @@ function DiscoverSection({ id, categories, selectedCategory, onCategory, title, 
                   <div className="card-body">
                     <h4>{card.title}</h4>
                     <p>{card.meta}</p>
-                    <div className="meter">
-                      <i style={{ width: `${card.progress}%` }} />
-                    </div>
-                    <div className="meta-row">
-                      <strong>{card.progress}% funded</strong>
-                      <span>{card.value}</span>
-                    </div>
+                    <span className="portfolio-result-pill sm">{card.result}</span>
                   </div>
                 </article>
               ))}

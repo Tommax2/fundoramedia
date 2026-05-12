@@ -4,17 +4,17 @@ const PILLARS = [
   {
     icon: "🎯",
     title: "Strategy first",
-    body: "Every campaign starts with research, validation, and a clear plan — not guesswork."
+    body: "Every project starts with research, validation, and a clear plan — not guesswork."
   },
   {
     icon: "📈",
     title: "Growth-focused",
-    body: "We measure success by real outcomes: leads generated, conversion rates, and funding results."
+    body: "We measure success by real outcomes: leads generated, conversion rates, and revenue results."
   },
   {
     icon: "🤝",
     title: "Partner, not vendor",
-    body: "We work alongside you as an extension of your team throughout the entire campaign lifecycle."
+    body: "We work alongside you as an extension of your team throughout the entire project lifecycle."
   }
 ];
 
@@ -26,10 +26,10 @@ function AboutSection() {
           <p className="eyebrow">About us</p>
           <h2>Built for creators who take their launch seriously</h2>
           <p className="about-body">
-            Fundora Creative Media is a specialist marketing agency helping crowdfunding creators and independent authors build audiences, attract supporters, and grow their impact. We combine strategy, creative production, and paid media to deliver real results — not just reports.
+            Fundora Creative Media is a specialist marketing agency helping product launch brands and independent authors build audiences, attract buyers, and grow their impact. We combine strategy, creative production, and paid media to deliver real results — not just reports.
           </p>
           <p className="about-body">
-            Founded by marketers with hands-on experience running campaigns across Kickstarter, Indiegogo, and Amazon KDP, we understand what it takes to stand out in a competitive landscape and convert interest into action.
+            Founded by marketers with hands-on experience running product launches and promotional campaigns across digital platforms and Amazon KDP, we understand what it takes to stand out in a competitive landscape and convert interest into action.
           </p>
           <div className="about-contact-row">
             <a href="mailto:hello@fundoramedia.com" className="about-contact-link">hello@fundoramedia.com</a>

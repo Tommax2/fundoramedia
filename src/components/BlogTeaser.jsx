@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 const PREVIEW_POSTS = [
-  { emoji: "🚀", topic: "Crowdfunding", title: "How to hit your funding goal in the first 48 hours", blur: true },
+  { emoji: "🚀", topic: "Launch Marketing", title: "How to exceed your launch targets in the first 48 hours", blur: true },
   { emoji: "📖", topic: "Book Marketing", title: "5 strategies authors use to reach 10,000 readers", blur: true },
-  { emoji: "💡", topic: "Creator Economy", title: "Building an audience before you launch your campaign", blur: false },
+  { emoji: "💡", topic: "Growth Strategy", title: "Building an audience before your product launch", blur: false },
 ];
 
 function BlogTeaser() {
@@ -25,7 +25,7 @@ function BlogTeaser() {
           <span className="blog-soon-pill">Launching Soon</span>
           <h2 className="blog-teaser-title">The Fundora Blog</h2>
           <p className="blog-teaser-sub">
-            Expert guides, creator stories, and strategies for crowdfunding success and book marketing growth — written by people who've done it.
+            Expert guides, client stories, and strategies for launch success and book marketing growth — written by people who've done it.
           </p>
         </div>
 

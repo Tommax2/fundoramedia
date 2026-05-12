@@ -5,9 +5,9 @@ function Footer() {
   const [activePolicy, setActivePolicy] = useState(null);
 
   const stats = [
-    { value: "500+", label: "Campaigns Marketed" },
+    { value: "500+", label: "Projects Delivered" },
     { value: "200+", label: "Authors Supported" },
-    { value: "$4M+", label: "Raised for Creators" },
+    { value: "$4M+", label: "Revenue Driven for Clients" },
     { value: "98%",  label: "Client Satisfaction" },
   ];
 
@@ -22,7 +22,7 @@ function Footer() {
         <div className="footer-inner">
           <div className="footer-brand">
             <img src="/logo.png" alt="Fundora Creative Media" className="footer-logo" />
-            <p className="footer-brand-sub">Growth systems for crowdfunding creators and ambitious authors.</p>
+            <p className="footer-brand-sub">Performance marketing for product launches and ambitious authors.</p>
           </div>
 
           <div className="footer-stats">
@@ -36,11 +36,11 @@ function Footer() {
 
           <div className="footer-cols">
             <div className="footer-col">
-              <h4>Platform</h4>
-              <a href="#fund-discover">Crowdfunding</a>
-              <a href="#book-discover">Book Studio</a>
-              <a href="#crowd-services">Services</a>
-              <a href="#crowd-packages">Packages</a>
+              <h4>Services</h4>
+              <a href="#fund-discover">Launch Marketing</a>
+              <a href="#book-discover">Book Marketing</a>
+              <a href="#crowd-services">What We Do</a>
+              <a href="#crowd-packages">Packages & Pricing</a>
             </div>
             <div className="footer-col">
               <h4>Company</h4>

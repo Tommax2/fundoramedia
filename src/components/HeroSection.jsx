@@ -22,7 +22,7 @@ function HeroSection({ tab, onStart, onExplore }) {
         <h1>
           {isFund ? (
             <>
-              We market campaigns that <em>get funded</em> and grow audiences
+              We build marketing systems that <em>grow brands</em> and drive results
             </>
           ) : (
             <>
@@ -32,7 +32,7 @@ function HeroSection({ tab, onStart, onExplore }) {
         </h1>
         <p className="hero-copy">
           {isFund
-            ? "From strategy and branding to paid ads and community growth — we handle the full marketing system behind your campaign launch."
+            ? "From strategy and branding to paid ads and community growth — we handle the full marketing system behind your product launch."
             : "From book positioning and branding to promotion, ads, and media outreach — we build the marketing engine behind your book's success."}
         </p>
         <div className="hero-actions">
@@ -43,7 +43,7 @@ function HeroSection({ tab, onStart, onExplore }) {
 
       <div className="hero-panel">
         <div className="hero-panel-top hero-panel-meta">
-          <strong>{isFund ? "Client campaign results" : "Client book results"}</strong>
+          <strong>{isFund ? "Client results" : "Client book results"}</strong>
           <span>Recent work</span>
         </div>
         <div className="hero-media-stack" aria-hidden="true">

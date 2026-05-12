@@ -64,11 +64,11 @@ function App() {
           <>
             <DiscoverSection
               id="fund-discover"
-              searchPlaceholder="Search campaigns..."
               categories={FUND_CATEGORIES}
               selectedCategory={fundCategory}
               onCategory={setFundCategory}
               title="Featured client work"
+              subtitle="Product launches and brands we've grown"
               cards={filteredFundCards}
               onViewAll={() => document.getElementById("crowd-services")?.scrollIntoView({ behavior: "smooth" })}
             />
@@ -82,11 +82,11 @@ function App() {
           <>
             <DiscoverSection
               id="book-discover"
-              searchPlaceholder="Search books or authors..."
               categories={BOOK_CATEGORIES}
               selectedCategory={bookCategory}
               onCategory={setBookCategory}
               title="Highly rated"
+              subtitle="Authors and books we've promoted"
               cards={filteredBookCards}
               onViewAll={() => document.getElementById("book-services")?.scrollIntoView({ behavior: "smooth" })}
             />

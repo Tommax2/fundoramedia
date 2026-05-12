@@ -14,8 +14,8 @@ const PACKAGES = [
       "Requirements validation",
       "Missing requirements compilation",
       "Reward tier recommendations",
-      "Funding goal guidance",
-      "Campaign improvement suggestions",
+      "Launch target planning",
+      "Project improvement suggestions",
       "Launch readiness checklist",
       "Strategic execution roadmap"
     ],
@@ -55,8 +55,8 @@ const PACKAGES = [
     tier: "PREMIUM PACKAGE",
     medal: "Gold",
     subtitle: "Full Campaign Marketing & Promotion",
-    tagline: "Complete Growth & Funding System",
-    description: "A full-scale done-for-you crowdfunding marketing solution.",
+    tagline: "Complete Growth & Performance System",
+    description: "A full-scale done-for-you launch marketing solution.",
     includes: [
     
       "Full campaign promotion",
@@ -65,7 +65,7 @@ const PACKAGES = [
       "Influencer outreach",
       "Email marketing automation",
       "Pre-launch audience building",
-      "Backer engagement management",
+      "Audience engagement management",
       "Daily campaign monitoring",
       "Performance optimization",
       "Retargeting ads",
@@ -74,8 +74,8 @@ const PACKAGES = [
       "Post-launch support",
       "Analytics & reporting"
     ],
-    deliverables: ["Active marketing campaigns", "Audience growth system", "Campaign performance reports", "Funding optimization strategy"],
-    bestFor: ["Serious creators", "High funding goals", "Brands seeking maximum exposure", "Full campaign management"],
+    deliverables: ["Active marketing execution", "Audience growth system", "Performance reports", "Revenue optimization strategy"],
+    bestFor: ["Serious founders & brands", "High-growth launch goals", "Brands seeking maximum exposure", "Full marketing management"],
     price: "Starting from $3,000",
     // paystackLink: "https://paystack.com/pay/fundoramedia-crowd-premium",
     tone: "gold"
@@ -87,7 +87,7 @@ function CrowdfundingPackagesSection() {
     <section className="crowd-packages reveal" id="crowd-packages">
       <div className="crowd-packages-head">
         <p className="eyebrow">Marketing Packages</p>
-        <h2>From Strategy to Full-Scale Campaign Growth</h2>
+        <h2>From Strategy to Full-Scale Launch Growth</h2>
       </div>
       <div className="crowd-packages-grid">
         {PACKAGES.map((pkg) => (
@@ -122,7 +122,7 @@ function CrowdfundingPackagesSection() {
             <div className="package-price">{pkg.price}</div>
             <a
               className="package-pay-btn"
-              href={pkg.paystackLink || `mailto:hello@fundoramedia.com?subject=${encodeURIComponent(`Crowdfunding Package Inquiry – ${pkg.tier}`)}&body=${encodeURIComponent(`Hi Fundoramedia,\n\nI'd like to get started with the ${pkg.tier} (${pkg.price}).\n\nPlease send payment details or next steps.`)}`}
+              href={pkg.paystackLink || `mailto:hello@fundoramedia.com?subject=${encodeURIComponent(`Launch Marketing Package Inquiry – ${pkg.tier}`)}&body=${encodeURIComponent(`Hi Fundoramedia,\n\nI'd like to get started with the ${pkg.tier} (${pkg.price}).\n\nPlease send payment details or next steps.`)}`}
               target={pkg.paystackLink ? "_blank" : undefined}
               rel={pkg.paystackLink ? "noopener noreferrer" : undefined}
             >
