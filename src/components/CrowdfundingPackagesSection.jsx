@@ -20,7 +20,7 @@ const PACKAGES = [
       "Strategic execution roadmap"
     ],
     deliverables: ["Campaign assessment report", "Market validation insights", "Action plan document"],
-    bestFor: ["First-time creators", "Unclear campaign direction", "Product validation stage"],
+    bestFor: ["Getting started for creators", " Campaign direction", "Product validation stage"],
     price: "Starting from $100",
     // paystackLink: "https://paystack.com/pay/fundoramedia-crowd-basic",
     tone: "bronze"
@@ -32,7 +32,7 @@ const PACKAGES = [
     tagline: "Professional Campaign Development",
     description: "Everything needed to professionally build your campaign before promotion.",
     includes: [
-      "Everything in Basic Package",
+  
       "Campaign creation on your desired campaign platform",
       "Campaign storytelling & copywriting",
       "Creative strategy development",
@@ -58,7 +58,7 @@ const PACKAGES = [
     tagline: "Complete Growth & Funding System",
     description: "A full-scale done-for-you crowdfunding marketing solution.",
     includes: [
-      "Everything in Standard Package",
+    
       "Full campaign promotion",
       "Facebook & Instagram ads management",
       "Lead generation campaigns",

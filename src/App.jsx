@@ -5,6 +5,7 @@ import ConsultationSection from "./components/ConsultationSection";
 import DiscoverSection from "./components/DiscoverSection";
 import BookPromotionSection from "./components/BookPromotionSection";
 import BookPackagesSection from "./components/BookPackagesSection";
+import BlogTeaser from "./components/BlogTeaser";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import TopNav from "./components/TopNav";
@@ -16,6 +17,14 @@ function App() {
   const [bookCategory, setBookCategory] = useState("All genres");
 
   const getPackageSectionId = (tabId) => (tabId === "fund" ? "crowd-packages" : "book-packages");
+
+  const filteredFundCards = fundCategory === "All"
+    ? FUND_CARDS
+    : FUND_CARDS.filter((c) => c.tag === fundCategory);
+
+  const filteredBookCards = bookCategory === "All genres"
+    ? BOOK_CARDS
+    : BOOK_CARDS.filter((c) => c.tag === bookCategory);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -58,7 +67,7 @@ function App() {
               selectedCategory={fundCategory}
               onCategory={setFundCategory}
               title="Trending right now"
-              cards={FUND_CARDS}
+              cards={filteredFundCards}
               onViewAll={() => document.getElementById("crowd-services")?.scrollIntoView({ behavior: "smooth" })}
             />
             <CrowdfundingServicesSection />
@@ -76,7 +85,7 @@ function App() {
               selectedCategory={bookCategory}
               onCategory={setBookCategory}
               title="Highly rated"
-              cards={BOOK_CARDS}
+              cards={filteredBookCards}
               onViewAll={() => document.getElementById("book-services")?.scrollIntoView({ behavior: "smooth" })}
             />
             <BookPromotionSection />
@@ -85,6 +94,7 @@ function App() {
           </>
         )}
 
+        <BlogTeaser />
         <Footer />
       </div>
     </div>

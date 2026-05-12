@@ -3,6 +3,7 @@ import LazyBackground from "./LazyBackground";
 
 function DiscoverSection({ id, categories, selectedCategory, onCategory, title, cards, onViewAll }) {
   const spotlight = cards[0];
+  const hasCards = cards.length > 0;
   const toneBackground = {
     blue: "linear-gradient(140deg, #4f67c8, #25387f)",
     leaf: "linear-gradient(140deg, #2f8b67, #1a4f3b)",
@@ -34,50 +35,58 @@ function DiscoverSection({ id, categories, selectedCategory, onCategory, title, 
           </div>
         </div>
 
-        <article className="spotlight">
-          <LazyBackground
-            className={`spotlight-media ${spotlight.tone}`}
-            image={spotlight.image}
-            overlay="linear-gradient(150deg, rgba(0,0,0,.2), rgba(0,0,0,.5))"
-            fallback={toneBackground[spotlight.tone]}
-          />
-          <div className="spotlight-body">
-            <span>{spotlight.tag}</span>
-            <h4>{spotlight.title}</h4>
-            <p>{spotlight.meta}</p>
-            <div className="meter">
-              <i style={{ width: `${spotlight.progress}%` }} />
-            </div>
-            <small className="pulse-text">Momentum is rising this hour</small>
-          </div>
-          <strong>{spotlight.value}</strong>
-        </article>
-
-        <div className="grid">
-          {cards.map((card, index) => (
-            <article className="card" key={card.title} style={{ animationDelay: `${index * 70}ms` }}>
+        {hasCards ? (
+          <>
+            <article className="spotlight">
               <LazyBackground
-                className={`thumb ${card.tone}`}
-                image={card.image}
-                overlay="linear-gradient(155deg, rgba(0,0,0,.15), rgba(0,0,0,.45))"
-                fallback={toneBackground[card.tone]}
-              >
-                <em>{card.tag}</em>
-              </LazyBackground>
-              <div className="card-body">
-                <h4>{card.title}</h4>
-                <p>{card.meta}</p>
+                className={`spotlight-media ${spotlight.tone}`}
+                image={spotlight.image}
+                overlay="linear-gradient(150deg, rgba(0,0,0,.2), rgba(0,0,0,.5))"
+                fallback={toneBackground[spotlight.tone]}
+              />
+              <div className="spotlight-body">
+                <span>{spotlight.tag}</span>
+                <h4>{spotlight.title}</h4>
+                <p>{spotlight.meta}</p>
                 <div className="meter">
-                  <i style={{ width: `${card.progress}%` }} />
+                  <i style={{ width: `${spotlight.progress}%` }} />
                 </div>
-                <div className="meta-row">
-                  <strong>{card.progress}% funded</strong>
-                  <span>{card.value}</span>
-                </div>
+                <small className="pulse-text">Momentum is rising this hour</small>
               </div>
+              <strong>{spotlight.value}</strong>
             </article>
-          ))}
-        </div>
+
+            <div className="grid">
+              {cards.map((card, index) => (
+                <article className="card" key={card.title} style={{ animationDelay: `${index * 70}ms` }}>
+                  <LazyBackground
+                    className={`thumb ${card.tone}`}
+                    image={card.image}
+                    overlay="linear-gradient(155deg, rgba(0,0,0,.15), rgba(0,0,0,.45))"
+                    fallback={toneBackground[card.tone]}
+                  >
+                    <em>{card.tag}</em>
+                  </LazyBackground>
+                  <div className="card-body">
+                    <h4>{card.title}</h4>
+                    <p>{card.meta}</p>
+                    <div className="meter">
+                      <i style={{ width: `${card.progress}%` }} />
+                    </div>
+                    <div className="meta-row">
+                      <strong>{card.progress}% funded</strong>
+                      <span>{card.value}</span>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </>
+        ) : (
+          <div className="no-results">
+            <p>No projects in this category yet.</p>
+          </div>
+        )}
       </div>
     </section>
   );

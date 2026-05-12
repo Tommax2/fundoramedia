@@ -3,8 +3,8 @@ export const TABS = [
   { id: "book", label: "Authoring" }
 ];
 
-export const FUND_CATEGORIES = ["All", "Tech", "Arts", "Health", "Food", "Education"];
-export const BOOK_CATEGORIES = ["All genres", "Fiction", "Non-fiction", "Academic", "Poetry", "Children's"];
+export const FUND_CATEGORIES = ["All", "Tech", "Arts", "Community", "Games", "Health"];
+export const BOOK_CATEGORIES = ["All genres", "Fiction", "Non-fiction", "Poetry", "Children's"];
 
 export const FUND_CARDS = [
   { icon: "SP", tag: "Tech", title: "SolarPack Mini", meta: "22 days left - 1,240 backers", progress: 87, value: "$52,200", tone: "blue", image: "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=640&q=60&fm=webp" },
@@ -14,8 +14,8 @@ export const FUND_CARDS = [
 ];
 
 export const BOOK_CARDS = [
-  { icon: "DS", tag: "Serialized", title: "The Dust Between Stars", meta: "Amara Olu - Ch. 14 of 20", progress: 70, value: "4.8 stars", tone: "blue", image: "https://images.unsplash.com/photo-1455885666463-9f41ee02f8db?auto=format&fit=crop&w=640&q=60&fm=webp" },
-  { icon: "RR", tag: "Work in progress", title: "Roots & Routes", meta: "T. Mensah - Biography", progress: 30, value: "In progress", tone: "gold", image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=640&q=60&fm=webp" },
-  { icon: "MM", tag: "Published", title: "Money Mindset Africa", meta: "K. Osei - Self-help", progress: 100, value: "4.9 stars", tone: "leaf", image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=640&q=60&fm=webp" },
-  { icon: "GA", tag: "Thriller", title: "Glass Alibi", meta: "N. Adeyemi - Ch. 8 of 24", progress: 33, value: "4.6 stars", tone: "rust", image: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=640&q=60&fm=webp" }
+  { icon: "DS", tag: "Fiction", title: "The Dust Between Stars", meta: "Amara Olu - Ch. 14 of 20", progress: 70, value: "4.8 stars", tone: "blue", image: "https://images.unsplash.com/photo-1455885666463-9f41ee02f8db?auto=format&fit=crop&w=640&q=60&fm=webp" },
+  { icon: "RR", tag: "Non-fiction", title: "Roots & Routes", meta: "T. Mensah - Biography", progress: 30, value: "In progress", tone: "gold", image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=640&q=60&fm=webp" },
+  { icon: "MM", tag: "Non-fiction", title: "Money Mindset Africa", meta: "K. Osei - Self-help", progress: 100, value: "4.9 stars", tone: "leaf", image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=640&q=60&fm=webp" },
+  { icon: "GA", tag: "Fiction", title: "Glass Alibi", meta: "N. Adeyemi - Ch. 8 of 24", progress: 33, value: "4.6 stars", tone: "rust", image: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=640&q=60&fm=webp" }
 ];

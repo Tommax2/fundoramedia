@@ -16,7 +16,7 @@ function TopNav({ tabs, tab, onTabChange, onLaunch }) {
   return (
     <nav className="top-nav">
       <div className="brand">
-        <img src="/logo.jpeg" alt="Fundora Creative Media" className="brand-logo" />
+        <img src="/logo.png" alt="Fundora Creative Media" className="brand-logo" />
       </div>
       <button className="nav-toggle" type="button" onClick={() => setOpen((prev) => !prev)} aria-expanded={open} aria-label="Toggle navigation">
         <span />

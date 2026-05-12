@@ -16,11 +16,8 @@ function Footer() {
 
       <div className="footer-inner">
         <div className="footer-brand">
-          <div className="footer-brand-mark">F</div>
-          <div>
-            <p className="footer-brand-name">Fundoramedia</p>
-            <p className="footer-brand-sub">Growth systems for crowdfunding creators and ambitious authors.</p>
-          </div>
+          <img src="/logo.png" alt="Fundora Creative Media" className="footer-logo" />
+          <p className="footer-brand-sub">Growth systems for crowdfunding creators and ambitious authors.</p>
         </div>
 
         <div className="footer-stats">
@@ -44,7 +41,7 @@ function Footer() {
             <h4>Company</h4>
             <a href="#">About us</a>
             <a href="#">Case studies</a>
-            <a href="#">Press</a>
+            <a href="#">Blog — Coming Soon</a>
             <a href="#">Careers</a>
           </div>
           <div className="footer-col">
