@@ -1078,7 +1078,7 @@ body {
 
 .service-card h3 {
   margin: 0 0 12px;
-  font-size: 1.08rem;
+  font-size: 0.96rem;
   font-weight: 700;
   line-height: 1.2;
   color: #1b1916;
@@ -1803,7 +1803,7 @@ body {
 
 .blog-teaser-title {
   margin: 0;
-  font: 500 clamp(1.25rem, 1.9vw, 1.7rem) / 1.14 "DM Serif Display", Georgia, serif;
+  font: 500 clamp(1.08rem, 1.55vw, 1.45rem) / 1.16 "DM Serif Display", Georgia, serif;
   color: #e5efe8;
   letter-spacing: -0.02em;
 }
@@ -1901,7 +1901,7 @@ body {
 
 .blog-preview-title {
   margin: 0;
-  font-size: 1.35rem;
+  font-size: 0.96rem;
   font-weight: 600;
   color: #f3f4f6;
   line-height: 1.24;
@@ -1999,7 +1999,7 @@ body {
   }
 
   .blog-teaser-title {
-    font-size: 1.42rem;
+    font-size: 0.9rem;
   }
 
   .blog-teaser-sub {
@@ -2026,7 +2026,7 @@ body {
   }
 
   .blog-preview-title {
-    font-size: 1.14rem;
+    font-size: 0.98rem;
   }
 
   .blog-preview-summary {
@@ -2052,7 +2052,7 @@ body {
   }
 
   .testimonials-head h2 {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
   }
 
   .testimonials-head p {
@@ -2062,17 +2062,17 @@ body {
 
   .testimonials-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 10px;
   }
 
   .testimonial-card {
-    padding: 14px;
-    border-radius: 14px;
-    gap: 9px;
+    padding: 12px;
+    border-radius: 12px;
+    gap: 8px;
   }
 
   .testimonial-quote {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     line-height: 1.54;
   }
 
@@ -2127,9 +2127,9 @@ body {
   border-top: 1px solid var(--line);
   padding: 56px 22px 60px;
   background:
-    radial-gradient(circle at 8% 12%, rgba(6, 95, 70, 0.06), transparent 30%),
-    radial-gradient(circle at 92% 80%, rgba(251, 191, 36, 0.07), transparent 30%),
-    linear-gradient(180deg, #F9FAFB, #ffffff);
+    radial-gradient(circle at 8% 12%, rgba(6, 95, 70, 0.1), transparent 30%),
+    radial-gradient(circle at 92% 80%, rgba(251, 191, 36, 0.06), transparent 30%),
+    linear-gradient(180deg, #171b1a, #1d2120 50%, #202423);
 }
 
 .testimonials-inner {
@@ -2144,11 +2144,11 @@ body {
 
 .testimonials-head h2 {
   margin: 0;
-  font: 500 clamp(1.25rem, 2vw, 1.8rem) / 1.14 "DM Serif Display", Georgia, serif;
+  font: 500 clamp(1.05rem, 1.65vw, 1.45rem) / 1.16 "DM Serif Display", Georgia, serif;
 }
 
 .testimonials-head p {
-  color: var(--muted);
+  color: #9db0a4;
   margin: 6px 0 0;
   font-size: 0.84rem;
 }
@@ -2156,23 +2156,25 @@ body {
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 10px;
 }
 
 .testimonial-card {
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 16px;
-  background: #fff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(167, 243, 208, 0.38);
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(34, 39, 37, 0.48);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: none;
   display: grid;
-  gap: 10px;
+  gap: 8px;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .testimonial-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.16);
 }
 
 .testimonial-stars {
@@ -2187,10 +2189,10 @@ body {
 
 .testimonial-quote {
   margin: 0;
-  font-size: 0.8rem;
-  color: var(--ink);
+  font-size: 0.72rem;
+  color: #e5e7eb;
   line-height: 1.58;
-  font-style: italic;
+  font-style: normal;
 }
 
 .testimonial-quote::before {
@@ -2208,18 +2210,18 @@ body {
   flex-direction: column;
   gap: 3px;
   padding-top: 8px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(167, 243, 208, 0.28);
 }
 
 .testimonial-name {
   font-weight: 700;
   font-size: 0.78rem;
-  color: var(--ink);
+  color: #f3f4f6;
 }
 
 .testimonial-role {
   font-size: 0.7rem;
-  color: var(--muted);
+  color: #b7c3bc;
 }
 
 .testimonial-tag {
@@ -2322,7 +2324,7 @@ body {
 }
 
 .about-pillar-icon {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   flex-shrink: 0;
   line-height: 1;
   width: 44px;
@@ -2864,7 +2866,7 @@ body {
 
   .card-body h4 {
     color: #ffffff;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   .card-body p {
@@ -2887,7 +2889,7 @@ body {
   }
 
   .pricing-header h2 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   .book-services,
@@ -2910,7 +2912,7 @@ body {
   }
 
   .blog-teaser-title {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   .blog-teaser-sub {
@@ -2941,7 +2943,7 @@ body {
   }
 
   .blog-preview-title {
-    font-size: 1.02rem;
+    font-size: 0.9rem;
   }
 
   .blog-preview-summary {
@@ -2958,7 +2960,7 @@ body {
   }
 
   .about-text h2 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-top: 12px;
   }
 
@@ -3012,7 +3014,7 @@ body {
   }
 
   .testimonials-head h2 {
-    font-size: 1.08rem;
+    font-size: 0.96rem;
   }
 
   .testimonials-head p {
@@ -3020,22 +3022,22 @@ body {
   }
 
   .testimonials-grid {
-    gap: 12px;
+    gap: 9px;
   }
 
   .testimonial-card {
-    padding: 13px;
+    padding: 11px;
     gap: 8px;
     border-radius: 12px;
   }
 
   .testimonial-quote {
-    font-size: 0.74rem;
+    font-size: 0.68rem;
     line-height: 1.5;
   }
 
   .testimonial-quote::before {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
 
   .testimonial-author {
@@ -3135,7 +3137,7 @@ body {
   }
 
   .footer-stat strong {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   .footer-stat span {
@@ -3192,7 +3194,7 @@ body {
   }
 
   .footer-stat strong {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
 
   .grid {
@@ -3328,3 +3330,4 @@ body {
     transform: none !important;
   }
 }
+
