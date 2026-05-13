@@ -51,13 +51,11 @@ function App() {
     <div className="app-shell">
       <div className="ambient a1" />
       <div className="ambient a2" />
-      <div className="app-card">
         <TopNav tabs={TABS} tab={tab} onTabChange={setTab} onLaunch={() => document.getElementById(getPackageSectionId(tab))?.scrollIntoView({ behavior: "smooth" })} />
 
         <HeroSection
           tab={tab}
           onStart={() => document.getElementById(getPackageSectionId(tab))?.scrollIntoView({ behavior: "smooth" })}
-          onExplore={() => document.getElementById(tab === "fund" ? "fund-discover" : "book-discover")?.scrollIntoView({ behavior: "smooth" })}
         />
 
         {tab === "fund" && (
@@ -100,7 +98,6 @@ function App() {
         <AboutSection />
         <BlogTeaser />
         <Footer />
-      </div>
     </div>
   );
 }

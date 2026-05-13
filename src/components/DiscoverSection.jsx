@@ -30,8 +30,10 @@ function DiscoverSection({ id, categories, selectedCategory, onCategory, title, 
             <p>{subtitle || "Projects we've delivered results for"}</p>
           </div>
           <div className="section-head-actions">
-            <span className="portfolio-tag">Client work</span>
-            <button onClick={onViewAll}>See our services</button>
+            <div className="portfolio-switch" role="group" aria-label="Portfolio switch">
+              <span className="portfolio-switch-active">Client work</span>
+              <button type="button" onClick={onViewAll}>Our services</button>
+            </div>
           </div>
         </div>
 

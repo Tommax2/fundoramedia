@@ -53,8 +53,8 @@ function Footer() {
               <h4>Connect</h4>
               <a href="mailto:hello@fundoramedia.com">hello@fundoramedia.com</a>
               <a href="tel:+2348000000000">+234 800 000 0000</a>
-              <a href="#">Twitter / X</a>
-              <a href="#">LinkedIn</a>
+              <a href="https://x.com/Fundoramedia" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+              <a href="https://web.facebook.com/profile.php?id=61589420200597" target="_blank" rel="noopener noreferrer">Facebook</a>
               <a href="#">Instagram</a>
             </div>
           </div>

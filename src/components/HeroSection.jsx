@@ -1,18 +1,18 @@
 import React from "react";
 import LazyBackground from "./LazyBackground";
 
-function HeroSection({ tab, onStart, onExplore }) {
+function HeroSection({ tab, onStart }) {
   const isFund = tab === "fund";
   const heroMedia = isFund
     ? [
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=70&fm=webp",
         "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=70&fm=webp",
-        "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=70&fm=webp"
+        "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=70&fm=webp",
       ]
     : [
         "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=70&fm=webp",
         "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=900&q=70&fm=webp",
-        "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=70&fm=webp"
+        "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=70&fm=webp",
       ];
 
   return (
@@ -37,7 +37,6 @@ function HeroSection({ tab, onStart, onExplore }) {
         </p>
         <div className="hero-actions">
           <button className="hero-primary" onClick={onStart}>Get started</button>
-          <button className="hero-secondary" onClick={onExplore}>See our work</button>
         </div>
       </div>
 
