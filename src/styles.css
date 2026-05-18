@@ -2764,23 +2764,32 @@ body {
   }
 
   .hero-media-stack {
-    min-height: 220px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 160px 120px;
+    gap: 10px;
+    min-height: auto;
+    position: relative;
+  }
+
+  .hero-media-card {
+    position: relative;
+    width: 100% !important;
+    height: 100% !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    animation: none;
+    border-radius: 14px;
   }
 
   .media-1 {
-    width: 66%;
-    height: 160px;
+    grid-column: 1 / -1;
   }
 
-  .media-2 {
-    width: 48%;
-    height: 115px;
-  }
-
-  .media-3 {
-    width: 46%;
-    height: 108px;
-    right: 8%;
+  .media-2, .media-3 {
+    grid-column: auto;
   }
 
   .spotlight {
@@ -3298,16 +3307,49 @@ body {
   }
 
   /* ── Hero ── */
-  .hero-media-stack {
-    min-height: 196px;
+  .hero {
+    padding: 24px 16px 20px;
+    gap: 20px;
   }
 
-  .media-1 { width: 73%; height: 138px; top: 38px; }
-  .media-2 { width: 56%; height: 100px; }
-  .media-3 { width: 50%; height: 90px; right: 3%; }
+  .hero-media-stack {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 148px 110px;
+    gap: 8px;
+    min-height: auto;
+    position: relative;
+  }
 
-  .hero-stat-chip { padding: 8px 9px; }
-  .hero-stat-chip strong { font-size: 0.95rem; }
+  .hero-media-card {
+    position: relative;
+    width: 100% !important;
+    height: 100% !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    animation: none !important;
+    border-radius: 12px;
+  }
+
+  .media-1 {
+    grid-column: 1 / -1;
+  }
+
+  .media-2, .media-3 {
+    grid-column: auto;
+  }
+
+  .hero-stat-chip {
+    position: absolute;
+    padding: 7px 9px;
+  }
+
+  .chip-a { left: 10px; top: 10px; }
+  .chip-b { right: 10px; bottom: 10px; }
+
+  .hero-stat-chip strong { font-size: 0.9rem; }
 
   /* ── Consultation ── */
   .consultation-form {

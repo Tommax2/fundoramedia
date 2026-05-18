@@ -40,6 +40,7 @@ function HeroSection({ tab, onStart }) {
         <div className="hero-media-stack" aria-hidden="true">
           {heroMedia.map((image, index) => (
             <LazyBackground
+              eager
               className={`hero-media-card media-${index + 1}`}
               key={image}
               image={image}
