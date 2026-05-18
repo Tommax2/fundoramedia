@@ -23,7 +23,7 @@ function TopNav({ tabs, tab, onTabChange, onLaunch }) {
     <>
       <nav className="top-nav">
         <div className="brand">
-          <img src="/logo.png" alt="Fundora Creative Media" className="brand-logo" />
+          <img src="/logo.png" alt="Fundora Creative Media" className="brand-logo" loading="eager" decoding="async" fetchpriority="high" />
         </div>
         <button
           className="nav-toggle"
@@ -60,7 +60,7 @@ function TopNav({ tabs, tab, onTabChange, onLaunch }) {
         <div className="nav-overlay" onClick={(e) => e.target === e.currentTarget && setOpen(false)}>
           <div className="nav-sheet">
             <div className="nav-sheet-header">
-              <img src="/logo.png" alt="Fundora" className="nav-sheet-logo" />
+              <img src="/logo.png" alt="Fundora" className="nav-sheet-logo" loading="lazy" decoding="async" />
               <button className="nav-sheet-close" onClick={() => setOpen(false)} aria-label="Close">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>

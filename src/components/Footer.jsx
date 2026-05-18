@@ -30,6 +30,8 @@ function Footer() {
               src="/logo.png"
               alt="Fundora Creative Media"
               className="footer-logo"
+              loading="lazy"
+              decoding="async"
             />
             <p className="footer-brand-sub">
               Performance marketing for product launches and ambitious authors.

@@ -4,47 +4,47 @@ import LazyBackground from "./LazyBackground";
 const SERVICES = [
   {
     title: "Launch Strategy & Planning",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=640&q=60&fm=webp",
+    image: "/hero-fund-2.webp",
     items: ["Market research & validation", "Launch roadmap creation", "Pricing & target planning", "Offer tier structuring"]
   },
   {
     title: "Brand Page Creation",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=640&q=60&fm=webp",
+    image: "/hero-fund-1.webp",
     items: ["Landing page design", "Copywriting (story, headlines)", "Visual layout optimization", "Conversion-focused structure"]
   },
   {
     title: "Pre-Launch Marketing",
-    image: "https://images.unsplash.com/photo-1476357471311-43c0db9fb2b4?auto=format&fit=crop&w=640&q=60&fm=webp",
+    image: "/svc-fund-3.webp",
     items: ["Email list building", "Lead generation ads", "Waitlist & early access setup", "Hype-building strategy"]
   },
   {
     title: "Video Production",
-    image: "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=640&q=60&fm=webp",
+    image: "/svc-fund-4.webp",
     items: ["Brand video scripting", "Storyboarding", "Video editing", "Voiceover production"]
   },
   {
     title: "Paid Advertising",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=640&q=60&fm=webp",
+    image: "/hero-fund-3.webp",
     items: ["Facebook & Instagram ads", "TikTok ads", "Google & YouTube ads", "Ad funnel optimization"]
   },
   {
     title: "Email Marketing & Automation",
-    image: "https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=640&q=60&fm=webp",
+    image: "/svc-fund-6.webp",
     items: ["Pre-launch sequences", "Launch announcement emails", "Customer retention emails", "Upsell & follow-up flows"]
   },
   {
     title: "Audience Outreach & Community Building",
-    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=640&q=60&fm=webp",
+    image: "/svc-fund-7.webp",
     items: ["Influencer outreach", "Affiliate marketing setup", "Community engagement (Discord, Telegram)", "Referral programmes"]
   },
   {
     title: "Live Marketing Management",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=640&q=60&fm=webp",
+    image: "/svc-fund-8.webp",
     items: ["Daily performance optimisation", "Content & update posting", "Audience & buyer management", "Stretch goal planning"]
   },
   {
     title: "Post-Launch Services",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=640&q=60&fm=webp",
+    image: "/svc-fund-9.webp",
     items: ["Fulfilment strategy", "Customer surveys", "Upsell promotions", "Transition to eCommerce"]
   }
 ];

@@ -4,16 +4,8 @@ import LazyBackground from "./LazyBackground";
 function HeroSection({ tab, onStart }) {
   const isFund = tab === "fund";
   const heroMedia = isFund
-    ? [
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=70&fm=webp",
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=70&fm=webp",
-        "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=70&fm=webp",
-      ]
-    : [
-        "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=70&fm=webp",
-        "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=900&q=70&fm=webp",
-        "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=70&fm=webp",
-      ];
+    ? ["/hero-fund-1.webp", "/hero-fund-2.webp", "/hero-fund-3.webp"]
+    : ["/hero-book-1.webp", "/hero-book-2.webp", "/hero-book-3.webp"];
 
   return (
     <section className="hero reveal">
