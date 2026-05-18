@@ -50,7 +50,10 @@ function DiscoverSection({ id, categories, selectedCategory, onCategory, title, 
                 <span>{spotlight.tag}</span>
                 <h4>{spotlight.title}</h4>
                 <p>{spotlight.meta}</p>
-                <span className="portfolio-result-pill">{spotlight.result}</span>
+                <span className="portfolio-result-pill">
+                  <svg width="11" height="11" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M6 0l1.5 4h4l-3.2 2.3 1.2 4L6 8 2.5 10.3l1.2-4L.5 4h4z"/></svg>
+                  {spotlight.result}
+                </span>
               </div>
               <div className="portfolio-service-chip">{spotlight.service}</div>
             </article>
@@ -69,7 +72,10 @@ function DiscoverSection({ id, categories, selectedCategory, onCategory, title, 
                   <div className="card-body">
                     <h4>{card.title}</h4>
                     <p>{card.meta}</p>
-                    <span className="portfolio-result-pill sm">{card.result}</span>
+                    <span className="portfolio-result-pill sm">
+                      <svg width="10" height="10" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M6 0l1.5 4h4l-3.2 2.3 1.2 4L6 8 2.5 10.3l1.2-4L.5 4h4z"/></svg>
+                      {card.result}
+                    </span>
                   </div>
                 </article>
               ))}

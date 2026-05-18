@@ -628,7 +628,7 @@ body {
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
 }
 
-.spotlight-body span {
+.spotlight-body span:not(.portfolio-result-pill) {
   color: var(--muted);
   font-size: 0.7rem;
   text-transform: uppercase;
@@ -715,14 +715,14 @@ body {
 }
 
 .thumb {
-  min-height: 120px;
+  min-height: 150px;
   font-size: 1.9rem;
   display: grid;
   place-items: center;
   position: relative;
   color: #fff;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #1f1f1f;
@@ -1047,7 +1047,7 @@ body {
   display: flex;
   gap: 14px;
   width: max-content;
-  animation: slideTrack 120s linear infinite;
+  animation: slideTrack 45s linear infinite;
 }
 
 .service-track.reverse {
@@ -1456,7 +1456,7 @@ body {
 }
 
 .footer-support-link {
-  display: inline-flex !important;
+  display: flex !important;
   align-items: center;
   gap: 7px;
   font-weight: 600;
@@ -1815,21 +1815,24 @@ body {
 
 /* ── Portfolio result / service chips ── */
 .portfolio-result-pill {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   margin-top: 8px;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: #fff;
   background: linear-gradient(135deg, #065F46, #047857);
   border-radius: 999px;
-  padding: 4px 10px;
+  padding: 5px 12px;
   letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(6, 95, 70, 0.28);
 }
 
 .portfolio-result-pill.sm {
   margin-top: 6px;
-  font-size: 0.68rem;
-  padding: 3px 8px;
+  font-size: 0.74rem;
+  padding: 4px 10px;
 }
 
 .portfolio-service-chip {
@@ -3039,7 +3042,7 @@ body {
     padding: 14px;
   }
 
-  .spotlight-body span {
+  .spotlight-body span:not(.portfolio-result-pill) {
     color: #6EE7B7;
     font-size: 0.9rem;
   }
