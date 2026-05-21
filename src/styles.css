@@ -1047,7 +1047,7 @@ body {
   display: flex;
   gap: 14px;
   width: max-content;
-  animation: slideTrack 80s linear infinite;
+  animation: slideTrack 200s linear infinite;
 }
 
 .service-track.reverse {
