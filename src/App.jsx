@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import CrowdfundingPackagesSection from "./components/CrowdfundingPackagesSection";
-import CrowdfundingServicesSection from "./components/CrowdfundingServicesSection";
 import ConsultationSection from "./components/ConsultationSection";
 import DiscoverSection from "./components/DiscoverSection";
 import BookPromotionSection from "./components/BookPromotionSection";
 import BookPackagesSection from "./components/BookPackagesSection";
+import MarketingServicesSection from "./components/MarketingServicesSection";
+import MarketingPackagesSection from "./components/MarketingPackagesSection";
 import BlogTeaser from "./components/BlogTeaser";
 import FaqSection from "./components/FaqSection";
 import TestimonialsSection from "./components/TestimonialsSection";
@@ -12,18 +12,16 @@ import AboutSection from "./components/AboutSection";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import TopNav from "./components/TopNav";
-import { BOOK_CARDS, BOOK_CATEGORIES, FUND_CARDS, FUND_CATEGORIES, TABS } from "./data/constants";
+import { BOOK_CARDS, BOOK_CATEGORIES, TABS } from "./data/constants";
 
 function App() {
-  const [tab, setTab] = useState("fund");
-  const [fundCategory, setFundCategory] = useState("All");
+  const [tab, setTab] = useState("book");
   const [bookCategory, setBookCategory] = useState("All genres");
 
-  const getPackageSectionId = (tabId) => (tabId === "fund" ? "crowd-packages" : "book-packages");
-
-  const filteredFundCards = fundCategory === "All"
-    ? FUND_CARDS
-    : FUND_CARDS.filter((c) => c.tag === fundCategory);
+  const getPackageSectionId = (tabId) => {
+    if (tabId === "book") return "book-packages";
+    return "marketing-packages";
+  };
 
   const filteredBookCards = bookCategory === "All genres"
     ? BOOK_CARDS
@@ -59,24 +57,6 @@ function App() {
           onStart={() => document.getElementById(getPackageSectionId(tab))?.scrollIntoView({ behavior: "smooth" })}
         />
 
-        {tab === "fund" && (
-          <>
-            <DiscoverSection
-              id="fund-discover"
-              categories={FUND_CATEGORIES}
-              selectedCategory={fundCategory}
-              onCategory={setFundCategory}
-              title="Featured client work"
-              subtitle="Product launches and brands we've grown"
-              cards={filteredFundCards}
-              onViewAll={() => document.getElementById("crowd-services")?.scrollIntoView({ behavior: "smooth" })}
-            />
-            <CrowdfundingServicesSection />
-            <ConsultationSection tab={tab} />
-            <CrowdfundingPackagesSection />
-          </>
-        )}
-
         {tab === "book" && (
           <>
             <DiscoverSection
@@ -95,6 +75,14 @@ function App() {
           </>
         )}
 
+        {tab === "marketing" && (
+          <>
+            <MarketingServicesSection />
+            <ConsultationSection tab={tab} />
+            <MarketingPackagesSection />
+          </>
+        )}
+
         <TestimonialsSection />
         <AboutSection />
         <BlogTeaser />
@@ -105,4 +93,3 @@ function App() {
 }
 
 export default App;
-
