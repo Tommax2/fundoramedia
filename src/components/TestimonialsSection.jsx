@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const TESTIMONIALS = [
   {
@@ -21,10 +21,78 @@ const TESTIMONIALS = [
     quote: "As someone with zero marketing experience, having Fundora run the entire promotion system was a game-changer. Professional, responsive, and laser-focused on results.",
     stars: 5,
     tag: "Launch Marketing"
+  },
+  {
+    name: "Nneka Bello",
+    role: "Children's Book Author",
+    quote: "Fundora helped us package the story, design the campaign, and reach schools and parents at scale. We sold out our first print run faster than expected.",
+    stars: 5,
+    tag: "Book Marketing"
+  },
+  {
+    name: "Daniel Reyes",
+    role: "SaaS Co-founder",
+    quote: "Their team rebuilt our launch messaging and ad funnel in one week. Conversion rate improved immediately, and our CAC dropped month over month.",
+    stars: 5,
+    tag: "Launch Marketing"
+  },
+  {
+    name: "Zainab Ibrahim",
+    role: "Personal Finance Creator",
+    quote: "I needed structure, consistency, and better campaign reporting. Fundora delivered all three and made growth feel predictable instead of random.",
+    stars: 5,
+    tag: "Marketing Services"
+  },
+  {
+    name: "Liam Ofori",
+    role: "Publisher",
+    quote: "From author positioning to promo rollout, every step felt deliberate. The communication was excellent and the final results exceeded our target.",
+    stars: 5,
+    tag: "Book Marketing"
   }
 ];
 
+function TestimonialCard({ testimonial }) {
+  return (
+    <article className="testimonial-card">
+      <div className="testimonial-stars">
+        {Array.from({ length: testimonial.stars }).map((_, i) => (
+          <span key={i}>&#9733;</span>
+        ))}
+      </div>
+      <p className="testimonial-quote">{testimonial.quote}</p>
+      <div className="testimonial-author">
+        <span className="testimonial-name">{testimonial.name}</span>
+        <span className="testimonial-role">{testimonial.role}</span>
+        <span className="testimonial-tag">{testimonial.tag}</span>
+      </div>
+    </article>
+  );
+}
+
 function TestimonialsSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 620px)");
+    const update = () => setIsMobile(media.matches);
+
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) return undefined;
+
+    const intervalId = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % TESTIMONIALS.length);
+    }, 4200);
+
+    return () => clearInterval(intervalId);
+  }, [isMobile]);
+
   return (
     <section className="testimonials reveal" id="testimonials">
       <div className="testimonials-inner">
@@ -33,23 +101,42 @@ function TestimonialsSection() {
           <h2>Trusted by creators worldwide</h2>
           <p>Real results from real projects. Here's what our clients say about working with us.</p>
         </div>
-        <div className="testimonials-grid">
-          {TESTIMONIALS.map((t) => (
-            <article key={t.name} className="testimonial-card">
-              <div className="testimonial-stars">
-                {Array.from({ length: t.stars }).map((_, i) => (
-                  <span key={i}>★</span>
+
+        {!isMobile ? (
+          <div className="testimonials-grid">
+            {TESTIMONIALS.map((t) => (
+              <TestimonialCard key={t.name} testimonial={t} />
+            ))}
+          </div>
+        ) : (
+          <>
+            <div className="testimonials-carousel-viewport" aria-live="polite">
+              <div
+                className="testimonials-carousel-track"
+                style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+              >
+                {TESTIMONIALS.map((t) => (
+                  <div key={t.name} className="testimonials-carousel-slide">
+                    <TestimonialCard testimonial={t} />
+                  </div>
                 ))}
               </div>
-              <p className="testimonial-quote">{t.quote}</p>
-              <div className="testimonial-author">
-                <span className="testimonial-name">{t.name}</span>
-                <span className="testimonial-role">{t.role}</span>
-                <span className="testimonial-tag">{t.tag}</span>
-              </div>
-            </article>
-          ))}
-        </div>
+            </div>
+            <div className="testimonials-dots" role="tablist" aria-label="Testimonial slides">
+              {TESTIMONIALS.map((t, index) => (
+                <button
+                  key={t.name}
+                  type="button"
+                  className={`testimonials-dot ${index === activeIndex ? "is-active" : ""}`}
+                  onClick={() => setActiveIndex(index)}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                  aria-selected={index === activeIndex}
+                  role="tab"
+                />
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </section>
   );
