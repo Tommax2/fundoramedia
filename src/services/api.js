@@ -2,10 +2,12 @@ const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:4100";
 
 function resolveAssetUrl(rawUrl) {
   if (!rawUrl) return "";
-  if (/^https?:\/\//i.test(rawUrl)) return rawUrl;
-  if (rawUrl.startsWith("//")) return `https:${rawUrl}`;
+  const value = String(rawUrl);
 
-  const normalized = rawUrl.startsWith("/") ? rawUrl : `/${rawUrl}`;
+  if (/^https?:\/\//i.test(value)) return value;
+  if (value.startsWith("//")) return `https:${value}`;
+
+  const normalized = value.startsWith("/") ? value : `/${value}`;
   return `${API_BASE}${normalized}`;
 }
 
@@ -14,7 +16,7 @@ function extractImageFromContent(content = "") {
   return match?.[1] || "";
 }
 
-function normalizePost(post) {
+function normalizePost(post = {}) {
   const imageUrl = post.imageUrl
     || post.image
     || post.coverImage

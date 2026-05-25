@@ -17,7 +17,7 @@ function renderPostContent(content, excerpt) {
 function BlogPostPage() {
   const { slugOrId } = useParams();
   const navigate = useNavigate();
-  const [tab, setTab] = useState("book");
+  const [tab, setTab] = useState(() => localStorage.getItem("fundora_tab") || "book");
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -43,7 +43,11 @@ function BlogPostPage() {
       <TopNav
         tabs={TABS}
         tab={tab}
-        onTabChange={(id) => { setTab(id); navigate("/"); }}
+        onTabChange={(id) => {
+          setTab(id);
+          localStorage.setItem("fundora_tab", id);
+          navigate("/");
+        }}
         onLaunch={() => navigate("/")}
       />
 

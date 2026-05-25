@@ -1948,6 +1948,33 @@ body {
   gap: 12px;
 }
 
+.blog-preview-carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 74vw);
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+.blog-preview-carousel .blog-preview-card {
+  scroll-snap-align: start;
+}
+
+@media (min-width: 640px) {
+  .blog-preview-carousel {
+    grid-auto-columns: calc(50% - 6px);
+  }
+}
+
+@media (min-width: 960px) {
+  .blog-preview-carousel {
+    grid-auto-columns: calc(33.333% - 8px);
+  }
+}
+
 .blog-preview-card {
   position: relative;
   border: 1px solid rgba(167, 243, 208, 0.5);
@@ -1988,6 +2015,88 @@ body {
 .blog-preview-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 18px 34px rgba(0, 0, 0, 0.24);
+}
+.blog-preview-featured {
+  margin-bottom: 14px;
+  border-color: rgba(250, 204, 21, 0.7);
+  box-shadow: 0 16px 32px rgba(250, 204, 21, 0.12), 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.blog-featured-image {
+  height: 260px;
+}
+
+.blog-featured-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #111827;
+  background: linear-gradient(120deg, #facc15, #f59e0b);
+}
+
+/* Blog full page */
+.blog-page-section {
+  padding-top: 7rem;
+  min-height: 60vh;
+}
+
+.blog-page-inner {
+  max-width: 1100px;
+}
+
+.blog-preview-grid--multi {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+/* Carousel with nav buttons */
+.blog-carousel-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.blog-carousel-wrap .blog-preview-carousel {
+  flex: 1;
+  min-width: 0;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.blog-carousel-wrap .blog-preview-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.blog-carousel-btn {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(167, 243, 208, 0.4);
+  background: rgba(38, 43, 41, 0.8);
+  color: #e5efe8;
+  font-size: 1.6rem;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  padding: 0;
+}
+
+.blog-carousel-btn:hover {
+  background: rgba(6, 95, 70, 0.5);
+  border-color: rgba(167, 243, 208, 0.7);
+}
+
+.blog-carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
 }
 
 /* FAQ */

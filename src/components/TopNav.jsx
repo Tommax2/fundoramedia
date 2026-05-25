@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function TopNav({ tabs, tab, onTabChange, onLaunch }) {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleTabClick = (id) => {
     onTabChange(id);
@@ -10,6 +12,12 @@ function TopNav({ tabs, tab, onTabChange, onLaunch }) {
   };
 
   const scrollToSection = (id) => {
+    if (location.pathname !== "/") {
+      navigate(`/#${id}`);
+      setOpen(false);
+      return;
+    }
+
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setOpen(false);
   };
