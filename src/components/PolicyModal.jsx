@@ -94,40 +94,40 @@ const POLICIES = {
     lastUpdated: "May 2026",
     content: [
       {
-        heading: "1. Overview",
+        heading: "Overview",
         body: "This Service Delivery Policy outlines how Fundora Creative Media delivers its marketing services, the timelines you can expect, and our communication standards. By engaging our services, you agree to the process described below."
       },
       {
-        heading: "2. Onboarding Process",
+        heading: "Onboarding Process",
         body: "After payment is confirmed, we will contact you within 1–2 business days to schedule an onboarding call. During this session, we gather all necessary information about your campaign or book project, set project goals, establish timelines, and assign a dedicated account manager to your project."
       },
       {
-        heading: "3. Service Timelines",
+        heading: "Service Timelines",
         body: "Estimated delivery timelines by package: Basic Package (consultation, research, and roadmap) — delivered within 5–7 business days of onboarding. Standard Package (campaign creation, branding, and page setup) — delivered within 10–14 business days. Premium Package (full marketing execution) — ongoing, with an initial setup phase of 7–10 business days, followed by active campaign management throughout the agreed period."
       },
       {
-        heading: "4. Deliverables",
+        heading: "Deliverables",
         body: "All deliverables are shared digitally via email or a shared Google Drive folder. You will receive a project summary at the close of each phase. For ongoing packages, you will receive weekly performance reports and monthly strategy reviews."
       },
       {
-        heading: "5. Communication Standards",
+        heading: "Communication Standards",
         body: "We are available Monday through Friday, 9 AM – 6 PM WAT (West Africa Time). We respond to all client emails and messages within 24 business hours. Your account manager will be your primary point of contact throughout the project. Urgent issues are escalated and typically resolved within 4 business hours."
       },
       {
-        heading: "6. Client Responsibilities",
+        heading: "Client Responsibilities",
         body: "To ensure timely delivery, clients must provide all required materials (brand assets, campaign details, author bio, manuscript summary, etc.) within 3 business days of the onboarding call. Delays in providing information may extend the delivery timeline proportionally."
       },
       {
-        heading: "7. Revisions",
+        heading: "Revisions",
         body: "Each package includes a reasonable number of revisions: Basic — up to 2 revision rounds on deliverables; Standard — up to 3 revision rounds; Premium — revisions are handled on an ongoing basis as part of active campaign management. Revision requests must be submitted in writing via email."
       },
       {
-        heading: "8. Project Completion",
+        heading: "Project Completion",
         body: "A project is considered complete when all deliverables have been provided and client sign-off has been received. For Basic and Standard packages, clients have 5 business days to review deliverables and request revisions. After sign-off, the project is closed."
       },
       {
-        heading: "9. Contact",
-        body: "For questions about service delivery, reach us at hello@fundoramedia.com or call +234 800 000 0000."
+        heading: "Contact",
+        body: "For questions about service delivery, reach us at hello@fundoramedia.com or call +1 470 7794 358."
       }
     ]
   },
