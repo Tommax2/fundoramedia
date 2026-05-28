@@ -1,32 +1,23 @@
 import React, { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function TopNav({ tabs, tab, onTabChange, onLaunch }) {
   const [open, setOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
 
   const handleTabClick = (id) => {
     onTabChange(id);
     setOpen(false);
   };
 
-  const scrollToSection = (id) => {
-    if (location.pathname !== "/") {
-      navigate(`/#${id}`);
-      setOpen(false);
-      return;
-    }
-
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setOpen(false);
-  };
-
   const navLinks = [
-    { label: "Services",     sectionId: tab === "fund" ? "crowd-services"     : "book-services" },
-    { label: "Packages",     sectionId: tab === "fund" ? "crowd-packages"     : "book-packages" },
-    { label: "Consultation", sectionId: tab === "fund" ? "crowd-consultation" : "book-consultation" },
+    { label: "Services",  href: "/services" },
+    { label: "Packages",  href: "/packages" },
+    { label: "About",     href: "/about" },
+    { label: "Blog",      href: "/blog" },
   ];
+
+  const isActive = (href) => location.pathname === href;
 
   return (
     <>
@@ -57,9 +48,13 @@ function TopNav({ tabs, tab, onTabChange, onLaunch }) {
         </div>
         <div className="top-links">
           {navLinks.map((link) => (
-            <button key={link.label} type="button" onClick={() => scrollToSection(link.sectionId)}>
+            <Link
+              key={link.label}
+              to={link.href}
+              className={isActive(link.href) ? "active" : ""}
+            >
               {link.label}
-            </button>
+            </Link>
           ))}
         </div>
         <button className="cta" onClick={onLaunch}>Launch project</button>
@@ -93,16 +88,17 @@ function TopNav({ tabs, tab, onTabChange, onLaunch }) {
 
             <nav className="nav-sheet-links">
               {navLinks.map((link) => (
-                <button
+                <Link
                   key={link.label}
-                  className="nav-sheet-link"
-                  onClick={() => scrollToSection(link.sectionId)}
+                  to={link.href}
+                  className={`nav-sheet-link${isActive(link.href) ? " active" : ""}`}
+                  onClick={() => setOpen(false)}
                 >
                   {link.label}
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                </button>
+                </Link>
               ))}
             </nav>
 

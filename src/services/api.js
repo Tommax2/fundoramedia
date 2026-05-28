@@ -29,6 +29,7 @@ function normalizePost(post = {}) {
   return {
     ...post,
     imageUrl: resolveAssetUrl(imageUrl),
+    secondaryImageUrl: resolveAssetUrl(post.secondaryImageUrl || ""),
   };
 }
 
@@ -37,6 +38,30 @@ export async function fetchPublishedPosts() {
   if (!response.ok) throw new Error("Failed to load blog posts");
   const posts = await response.json();
   return Array.isArray(posts) ? posts.map(normalizePost) : [];
+}
+
+export async function fetchPostComments(postId) {
+  const response = await fetch(`${API_BASE}/api/posts/${postId}/comments`);
+  if (!response.ok) throw new Error("Failed to load comments");
+  return response.json();
+}
+
+export async function addComment(postId, { author, body }) {
+  const response = await fetch(`${API_BASE}/api/posts/${postId}/comments`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ author, body }),
+  });
+  if (!response.ok) throw new Error("Failed to post comment");
+  return response.json();
+}
+
+export async function likePost(postId) {
+  const response = await fetch(`${API_BASE}/api/posts/${postId}/like`, {
+    method: "POST",
+  });
+  if (!response.ok) throw new Error("Failed to like post");
+  return response.json();
 }
 
 export async function trackEvent(payload) {
