@@ -74,7 +74,14 @@ function BlogPostPage() {
   }, [post, slugOrId]);
 
   async function handleLike() {
-    if (liked || liking || !post) return;
+    if (liking || !post) return;
+    if (liked) {
+      const updated = getLikedPosts().filter((id) => id !== String(post.id));
+      setLikedPosts(updated);
+      setLiked(false);
+      setLikeCount((c) => Math.max(0, c - 1));
+      return;
+    }
     setLiking(true);
     try {
       const result = await likePost(post.id);
@@ -164,8 +171,8 @@ function BlogPostPage() {
                   type="button"
                   className={`blog-like-btn${liked ? " blog-like-btn--liked" : ""}`}
                   onClick={handleLike}
-                  disabled={liked || liking}
-                  aria-label="Like this post"
+                  disabled={liking}
+                  aria-label={liked ? "Unlike this post" : "Like this post"}
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill={liked ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>

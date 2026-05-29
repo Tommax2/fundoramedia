@@ -2264,10 +2264,12 @@ body {
 
 .blog-post-hero-image {
   width: 100%;
+  height: 260px;
   max-height: 420px;
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 8px;
+  display: block;
 }
 
 .blog-post-secondary-image {
@@ -2305,7 +2307,13 @@ body {
   background: #065f46;
   border-color: #065f46;
   color: #fff;
-  cursor: default;
+  cursor: pointer;
+}
+
+.blog-like-btn--liked:hover {
+  background: #991b1b;
+  border-color: #991b1b;
+  transform: scale(1.04);
 }
 
 /* Comments */
@@ -2552,6 +2560,16 @@ body {
     font-size: 0.82rem;
   }
 
+  .blog-post-detail {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .blog-post-hero-image {
+    height: 190px;
+    border-radius: 8px;
+  }
+
   .blog-notify-form {
     gap: 8px;
   }
@@ -2619,13 +2637,22 @@ body {
     margin-bottom: 12px;
   }
 
-  .about-contact-row {
-    margin-top: 16px;
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .about-email-btn {
-    width: 100%;
-    justify-content: center;
+  .about-mission {
+    padding: 20px 20px 20px 24px;
+  }
+
+  .about-founder {
+    grid-template-columns: 1fr;
+    padding: 22px;
+    gap: 20px;
+  }
+
+  .about-founder-photo {
+    height: 260px;
   }
 
   .about-pillars {
@@ -2872,6 +2899,158 @@ body {
   flex-wrap: wrap;
   min-width: 0;
   margin-top: 8px;
+}
+
+/* Stats */
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 20px 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.about-stat-value {
+  font: 700 clamp(1.6rem, 2.8vw, 2.2rem) / 1 "DM Serif Display", Georgia, serif;
+  color: #065f46;
+  letter-spacing: -0.02em;
+}
+
+.about-stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Mission */
+.about-mission {
+  position: relative;
+  padding: 28px 32px;
+  background: linear-gradient(135deg, rgba(6, 95, 70, 0.05), rgba(251, 191, 36, 0.04));
+  border: 1px solid rgba(6, 95, 70, 0.18);
+  border-left: 4px solid #065f46;
+  border-radius: 16px;
+}
+
+.about-mission-quote {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  color: #065f46;
+}
+
+.about-mission p {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.4vw, 1.08rem);
+  line-height: 1.75;
+  color: #1f2937;
+  font-style: italic;
+}
+
+/* Founder */
+.about-founder {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 36px;
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.about-founder-photo-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.about-founder-photo {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 14px;
+  display: block;
+}
+
+.about-founder-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-founder-eyebrow {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #065f46;
+}
+
+.about-founder-name {
+  margin: 0;
+  font: 500 clamp(1.3rem, 2vw, 1.7rem) / 1.15 "DM Serif Display", Georgia, serif;
+  letter-spacing: -0.01em;
+  color: #111827;
+}
+
+.about-founder-divider {
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #065f46, #facc15);
+  border-radius: 99px;
+}
+
+.about-founder-bio {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.about-founder-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.about-founder-tags span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #f0fdf4;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+}
+
+/* Values header */
+.about-values-header {
+  text-align: center;
+  margin-bottom: -16px;
+}
+
+.about-values-header h3 {
+  margin: 6px 0 0;
+  font: 500 clamp(1.1rem, 1.8vw, 1.45rem) / 1.15 "DM Serif Display", Georgia, serif;
+  letter-spacing: -0.01em;
 }
 
 .about-pillars {
@@ -3602,12 +3781,26 @@ body {
     font-size: 0.84rem;
   }
 
-  .about-email-btn {
-    font-size: 0.82rem;
-    padding: 10px 14px;
-    gap: 6px;
-    width: 100%;
-    justify-content: center;
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .about-stat {
+    padding: 14px 8px;
+  }
+
+  .about-mission {
+    padding: 16px 16px 16px 18px;
+  }
+
+  .about-founder {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .about-founder-photo {
+    height: 220px;
   }
 
   .about-pillars {
