@@ -2287,32 +2287,33 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #f0fdf4;
-  border: 1px solid #a7f3d0;
-  color: #065f46;
+  background: #f9fafb;
+  border: 1.5px solid #d1d5db;
+  color: #374151;
   border-radius: 999px;
-  padding: 8px 18px;
+  padding: 9px 20px;
   font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.14s, transform 0.14s;
+  transition: background 0.14s, border-color 0.14s, color 0.14s, transform 0.14s;
 }
 
 .blog-like-btn:hover:not(:disabled) {
-  background: #d1fae5;
+  background: #f3f4f6;
+  border-color: #9ca3af;
   transform: scale(1.04);
 }
 
 .blog-like-btn--liked {
-  background: #065f46;
-  border-color: #065f46;
-  color: #fff;
+  background: #fef2f2;
+  border-color: #fca5a5;
+  color: #b91c1c;
   cursor: pointer;
 }
 
 .blog-like-btn--liked:hover {
-  background: #991b1b;
-  border-color: #991b1b;
+  background: #fee2e2;
+  border-color: #f87171;
   transform: scale(1.04);
 }
 
