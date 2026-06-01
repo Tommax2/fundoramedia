@@ -53,7 +53,7 @@ const POLICIES = {
       },
       {
         heading: "2. Services",
-        body: "Fundora Creative Media provides product launch marketing, book promotion, marketing consulting, and related creative services. The specific scope of work for each engagement is agreed upon in writing before any payment is processed."
+        body: "Fundora Creative Media provides campaign launch strategy, book promotion, campaign consulting, and related creative services. The specific scope of work for each engagement is agreed upon in writing before any payment is processed."
       },
       {
         heading: "3. Payment",
@@ -95,7 +95,7 @@ const POLICIES = {
     content: [
       {
         heading: "Overview",
-        body: "This Service Delivery Policy outlines how Fundora Creative Media delivers its marketing services, the timelines you can expect, and our communication standards. By engaging our services, you agree to the process described below."
+        body: "This Service Delivery Policy outlines how Fundora Creative Media delivers its campaign launch services, the timelines you can expect, and our communication standards. By engaging our services, you agree to the process described below."
       },
       {
         heading: "Onboarding Process",
@@ -103,7 +103,7 @@ const POLICIES = {
       },
       {
         heading: "Service Timelines",
-        body: "Estimated delivery timelines by package: Basic Package (consultation, research, and roadmap) — delivered within 5–7 business days of onboarding. Standard Package (campaign creation, branding, and page setup) — delivered within 10–14 business days. Premium Package (full marketing execution) — ongoing, with an initial setup phase of 7–10 business days, followed by active campaign management throughout the agreed period."
+        body: "Estimated delivery timelines by package: Basic Package (consultation, research, and roadmap) — delivered within 5–7 business days of onboarding. Standard Package (campaign creation, branding, and page setup) — delivered within 10–14 business days. Premium Package (full launch execution) — ongoing, with an initial setup phase of 7–10 business days, followed by active campaign management throughout the agreed period."
       },
       {
         heading: "Deliverables",

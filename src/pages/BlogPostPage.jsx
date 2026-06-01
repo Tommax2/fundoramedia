@@ -3,15 +3,32 @@ import { useNavigate, useParams } from "react-router-dom";
 import TopNav from "../components/TopNav";
 import Footer from "../components/Footer";
 import { TABS } from "../data/constants";
-import { fetchPublishedPosts, fetchPostComments, addComment, likePost, trackEvent } from "../services/api";
+import {
+  fetchPublishedPosts,
+  fetchPostComments,
+  addComment,
+  likePost,
+  trackEvent,
+  incrementPostView,
+} from "../services/api";
 
 function renderPostContent(content, excerpt) {
-  if (!content) return <p className="blog-post-content">{excerpt || "Post content coming soon."}</p>;
+  if (!content)
+    return (
+      <p className="blog-post-content">
+        {excerpt || "Post content coming soon."}
+      </p>
+    );
 
   const hasHtmlTag = /<\/?[a-z][\s\S]*>/i.test(content);
   if (!hasHtmlTag) return <p className="blog-post-content">{content}</p>;
 
-  return <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: content }} />;
+  return (
+    <div
+      className="blog-post-content"
+      dangerouslySetInnerHTML={{ __html: content }}
+    />
+  );
 }
 
 function timeAgo(dateStr) {
@@ -23,11 +40,19 @@ function timeAgo(dateStr) {
   if (hrs < 24) return `${hrs}h ago`;
   const days = Math.floor(hrs / 24);
   if (days < 30) return `${days}d ago`;
-  return new Date(dateStr).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  return new Date(dateStr).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
 }
 
 function getLikedPosts() {
-  try { return JSON.parse(localStorage.getItem("fundora_liked") || "[]"); } catch { return []; }
+  try {
+    return JSON.parse(localStorage.getItem("fundora_liked") || "[]");
+  } catch {
+    return [];
+  }
 }
 function setLikedPosts(ids) {
   localStorage.setItem("fundora_liked", JSON.stringify(ids));
@@ -36,7 +61,9 @@ function setLikedPosts(ids) {
 function BlogPostPage() {
   const { slugOrId } = useParams();
   const navigate = useNavigate();
-  const [tab, setTab] = useState(() => localStorage.getItem("fundora_tab") || "book");
+  const [tab, setTab] = useState(
+    () => localStorage.getItem("fundora_tab") || "book",
+  );
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -49,6 +76,7 @@ function BlogPostPage() {
   const [likeCount, setLikeCount] = useState(0);
   const [liked, setLiked] = useState(false);
   const [liking, setLiking] = useState(false);
+  const [viewCount, setViewCount] = useState(0);
 
   useEffect(() => {
     fetchPublishedPosts()
@@ -57,13 +85,27 @@ function BlogPostPage() {
   }, []);
 
   const post = useMemo(() => {
-    return posts.find((item) => String(item.id) === String(slugOrId) || item.slug === slugOrId);
+    return posts.find(
+      (item) => String(item.id) === String(slugOrId) || item.slug === slugOrId,
+    );
   }, [posts, slugOrId]);
 
   useEffect(() => {
     if (!post) return;
-    trackEvent({ type: "post_view", path: `/blog/${slugOrId}`, postId: post.id });
+    trackEvent({
+      type: "post_view",
+      path: `/blog/${slugOrId}`,
+      postId: post.id,
+    });
     setLikeCount(post.likes || 0);
+    setViewCount(post.views || 0);
+
+    // attempt to increment server-side view counter; fallback to local increment
+    (async () => {
+      const res = await incrementPostView(post.id);
+      if (res && typeof res.views === "number") setViewCount(res.views);
+      else setViewCount((c) => c + 1);
+    })();
     setLiked(getLikedPosts().includes(String(post.id)));
 
     setCommentsLoading(true);
@@ -75,13 +117,8 @@ function BlogPostPage() {
 
   async function handleLike() {
     if (liking || !post) return;
-    if (liked) {
-      const updated = getLikedPosts().filter((id) => id !== String(post.id));
-      setLikedPosts(updated);
-      setLiked(false);
-      setLikeCount((c) => Math.max(0, c - 1));
-      return;
-    }
+    if (liked) return;
+
     setLiking(true);
     try {
       const result = await likePost(post.id);
@@ -139,9 +176,13 @@ function BlogPostPage() {
           </button>
 
           {loading ? (
-            <div className="card"><p>Loading post...</p></div>
+            <div className="card">
+              <p>Loading post...</p>
+            </div>
           ) : !post ? (
-            <div className="card"><p>Post not found.</p></div>
+            <div className="card">
+              <p>Post not found.</p>
+            </div>
           ) : (
             <>
               <article className="blog-post-detail">
@@ -159,9 +200,16 @@ function BlogPostPage() {
                     alt={`${post.title || "Blog post"} – secondary image`}
                   />
                 ) : null}
-                <span className="blog-soon-chip">{post.status || "published"}</span>
+                <span className="blog-soon-chip">
+                  {post.status || "published"}
+                </span>
                 <h1 className="blog-post-title">{post.title}</h1>
-                <p className="blog-post-meta">By {post.author || "Fundora Team"}</p>
+                <p className="blog-post-meta">
+                  By {post.author || "Fundora Team"}
+                </p>
+                <p className="blog-post-stats">
+                  {viewCount} views • {likeCount} likes
+                </p>
                 {renderPostContent(post.content, post.excerpt)}
               </article>
 
@@ -171,14 +219,23 @@ function BlogPostPage() {
                   type="button"
                   className={`blog-like-btn${liked ? " blog-like-btn--liked" : ""}`}
                   onClick={handleLike}
-                  disabled={liking}
-                  aria-label={liked ? "Unlike this post" : "Like this post"}
+                  disabled={liking || liked}
+                  aria-label={liked ? "You liked this post" : "Like this post"}
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill={liked ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill={liked ? "currentColor" : "none"}
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                   </svg>
                   {likeCount > 0 ? <span>{likeCount}</span> : null}
-                  <span>{liked ? "Unlike" : "Like"}</span>
+                  <span>{liked ? "Liked" : "Like"}</span>
                 </button>
               </div>
 
@@ -188,13 +245,18 @@ function BlogPostPage() {
                   Comments{comments.length > 0 ? ` (${comments.length})` : ""}
                 </h3>
 
-                <form className="blog-comment-form" onSubmit={handleCommentSubmit}>
+                <form
+                  className="blog-comment-form"
+                  onSubmit={handleCommentSubmit}
+                >
                   <input
                     className="blog-comment-input"
                     type="text"
                     placeholder="Your name"
                     value={commentForm.author}
-                    onChange={(e) => setCommentForm((p) => ({ ...p, author: e.target.value }))}
+                    onChange={(e) =>
+                      setCommentForm((p) => ({ ...p, author: e.target.value }))
+                    }
                     required
                     maxLength={80}
                   />
@@ -202,13 +264,21 @@ function BlogPostPage() {
                     className="blog-comment-input blog-comment-textarea"
                     placeholder="Write a comment…"
                     value={commentForm.body}
-                    onChange={(e) => setCommentForm((p) => ({ ...p, body: e.target.value }))}
+                    onChange={(e) =>
+                      setCommentForm((p) => ({ ...p, body: e.target.value }))
+                    }
                     required
                     rows={3}
                     maxLength={1000}
                   />
-                  {commentError ? <p className="blog-comment-error">{commentError}</p> : null}
-                  <button type="submit" className="blog-comment-submit" disabled={commentSubmitting}>
+                  {commentError ? (
+                    <p className="blog-comment-error">{commentError}</p>
+                  ) : null}
+                  <button
+                    type="submit"
+                    className="blog-comment-submit"
+                    disabled={commentSubmitting}
+                  >
                     {commentSubmitting ? "Posting…" : "Post comment"}
                   </button>
                 </form>
@@ -216,14 +286,20 @@ function BlogPostPage() {
                 {commentsLoading ? (
                   <p className="blog-comment-empty">Loading comments…</p>
                 ) : comments.length === 0 ? (
-                  <p className="blog-comment-empty">No comments yet. Be the first!</p>
+                  <p className="blog-comment-empty">
+                    No comments yet. Be the first!
+                  </p>
                 ) : (
                   <ul className="blog-comment-list">
                     {comments.map((c) => (
                       <li key={c.id || c._id} className="blog-comment">
                         <div className="blog-comment-header">
-                          <span className="blog-comment-author">{c.author}</span>
-                          <span className="blog-comment-time">{timeAgo(c.createdAt)}</span>
+                          <span className="blog-comment-author">
+                            {c.author}
+                          </span>
+                          <span className="blog-comment-time">
+                            {timeAgo(c.createdAt)}
+                          </span>
                         </div>
                         <p className="blog-comment-body">{c.body}</p>
                       </li>

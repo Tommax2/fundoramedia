@@ -34,7 +34,7 @@ function Footer() {
               decoding="async"
             />
             <p className="footer-brand-sub">
-              Performance marketing for product launches and ambitious authors.
+              Campaign launch support for funding-ready creators and ambitious authors.
             </p>
           </div>
 
@@ -50,7 +50,7 @@ function Footer() {
           <div className="footer-cols">
             <div className="footer-col">
               <h4>Services</h4>
-              <a href="#fund-discover">Launch Marketing</a>
+              <a href="#fund-discover">Campaign Launch</a>
               <a href="#book-discover">Book Marketing</a>
               <a href="#crowd-services">What We Do</a>
               <a href="#crowd-packages">Packages & Pricing</a>

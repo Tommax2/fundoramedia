@@ -7,7 +7,7 @@ const FAQS = [
   },
   {
     q: "Do you work with both product founders and authors?",
-    a: "Yes. We support product launches and book marketing campaigns, with strategy and execution tailored to each audience."
+    a: "Yes. We support campaign launches and book growth campaigns, with strategy and execution tailored to each audience."
   },
   {
     q: "Can I request revisions during the project?",

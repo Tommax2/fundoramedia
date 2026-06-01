@@ -13,7 +13,7 @@ const SERVICES = [
     items: ["Landing page design", "Copywriting (story, headlines)", "Visual layout optimization", "Conversion-focused structure"]
   },
   {
-    title: "Pre-Launch Marketing",
+    title: "Pre-Launch Audience Building",
     image: "/svc-fund-3.webp",
     items: ["Email list building", "Lead generation ads", "Waitlist & early access setup", "Hype-building strategy"]
   },
@@ -28,17 +28,17 @@ const SERVICES = [
     items: ["Facebook & Instagram ads", "TikTok ads", "Google & YouTube ads", "Ad funnel optimization"]
   },
   {
-    title: "Email Marketing & Automation",
+    title: "Email Sequences & Automation",
     image: "/svc-fund-6.webp",
     items: ["Pre-launch sequences", "Launch announcement emails", "Customer retention emails", "Upsell & follow-up flows"]
   },
   {
     title: "Audience Outreach & Community Building",
     image: "/svc-fund-7.webp",
-    items: ["Influencer outreach", "Affiliate marketing setup", "Community engagement (Discord, Telegram)", "Referral programmes"]
+    items: ["Influencer outreach", "Partner referral setup", "Community engagement (Discord, Telegram)", "Referral programmes"]
   },
   {
-    title: "Live Marketing Management",
+    title: "Live Campaign Management",
     image: "/svc-fund-8.webp",
     items: ["Daily performance optimisation", "Content & update posting", "Audience & buyer management", "Stretch goal planning"]
   },
@@ -56,7 +56,7 @@ function CrowdfundingServicesSection() {
     <section className="crowd-services reveal" id="crowd-services">
       <div className="crowd-services-head">
         <p className="eyebrow">What we do</p>
-        <h2>Launch Marketing Services</h2>
+        <h2>Campaign Launch Services</h2>
       </div>
 
       <div className="service-carousel">

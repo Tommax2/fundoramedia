@@ -54,16 +54,16 @@ const PACKAGES = [
   {
     tier: "PREMIUM PACKAGE",
     medal: "Gold",
-    subtitle: "Full Campaign Marketing & Promotion",
-    tagline: "Complete Growth & Performance System",
-    description: "A full-scale done-for-you launch marketing solution.",
+    subtitle: "Full Campaign Launch & Promotion",
+    tagline: "Complete Launch & Performance System",
+    description: "A full-scale done-for-you campaign launch solution.",
     includes: [
     
       "Full campaign promotion",
       "Facebook & Instagram ads management",
       "Lead generation campaigns",
       "Influencer outreach",
-      "Email marketing automation",
+      "Email sequence automation",
       "Pre-launch audience building",
       "Audience engagement management",
       "Daily campaign monitoring",
@@ -74,8 +74,8 @@ const PACKAGES = [
       "Post-launch support",
       "Analytics & reporting"
     ],
-    deliverables: ["Active marketing execution", "Audience growth system", "Performance reports", "Revenue optimization strategy"],
-    bestFor: ["Serious founders & brands", "High-growth launch goals", "Brands seeking maximum exposure", "Full marketing management"],
+    deliverables: ["Active campaign execution", "Audience growth system", "Performance reports", "Revenue optimization strategy"],
+    bestFor: ["Serious founders & brands", "High-growth launch goals", "Brands seeking maximum exposure", "Full launch management"],
     price: "Starting from $3,000",
     // paystackLink: "https://paystack.com/pay/fundoramedia-crowd-premium",
     tone: "gold"
@@ -86,7 +86,7 @@ function CrowdfundingPackagesSection() {
   return (
     <section className="crowd-packages reveal" id="crowd-packages">
       <div className="crowd-packages-head">
-        <p className="eyebrow">Marketing Packages</p>
+        <p className="eyebrow">Campaign Packages</p>
         <h2>From Strategy to Full-Scale Launch Growth</h2>
       </div>
       <div className="crowd-packages-grid">
@@ -122,7 +122,7 @@ function CrowdfundingPackagesSection() {
             <div className="package-price">{pkg.price}</div>
             <a
               className="package-pay-btn"
-              href={pkg.paystackLink || `mailto:hello@fundoramedia.com?subject=${encodeURIComponent(`Launch Marketing Package Inquiry – ${pkg.tier}`)}&body=${encodeURIComponent(`Hi Fundoramedia,\n\nI'd like to get started with the ${pkg.tier} (${pkg.price}).\n\nPlease send payment details or next steps.`)}`}
+              href={pkg.paystackLink || `mailto:hello@fundoramedia.com?subject=${encodeURIComponent(`Campaign Launch Package Inquiry – ${pkg.tier}`)}&body=${encodeURIComponent(`Hi Fundoramedia,\n\nI'd like to get started with the ${pkg.tier} (${pkg.price}).\n\nPlease send payment details or next steps.`)}`}
               target={pkg.paystackLink ? "_blank" : undefined}
               rel={pkg.paystackLink ? "noopener noreferrer" : undefined}
             >

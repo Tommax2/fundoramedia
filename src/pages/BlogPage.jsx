@@ -11,7 +11,9 @@ import { TABS } from "../data/constants";
 function BlogPage() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [tab, setTab] = useState(() => localStorage.getItem("fundora_tab") || "book");
+  const [tab, setTab] = useState(
+    () => localStorage.getItem("fundora_tab") || "book",
+  );
   const carouselRef = useRef(null);
   const navigate = useNavigate();
 
@@ -30,7 +32,10 @@ function BlogPage() {
     if (!carouselRef.current) return;
     const card = carouselRef.current.querySelector(".blog-preview-card");
     if (!card) return;
-    carouselRef.current.scrollBy({ left: dir * (card.offsetWidth + 12), behavior: "smooth" });
+    carouselRef.current.scrollBy({
+      left: dir * (card.offsetWidth + 12),
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -54,14 +59,19 @@ function BlogPage() {
             <span className="blog-soon-pill">Live now</span>
             <h2 className="blog-teaser-title">The Fundora Blog</h2>
             <p className="blog-teaser-sub">
-              Perspectives on publishing, marketing, and the art of getting your story heard.
+              Perspectives on publishing, campaign launches, and the art of getting your
+              story heard.
             </p>
           </div>
 
           {loading ? (
-            <div className="card"><p style={{ color: "#9db0a4" }}>Loading blog posts...</p></div>
+            <div className="card">
+              <p style={{ color: "#9db0a4" }}>Loading blog posts...</p>
+            </div>
           ) : posts.length === 0 ? (
-            <p style={{ color: "#9db0a4" }}>Our first story is brewing — check back soon.</p>
+            <p style={{ color: "#9db0a4" }}>
+              Our first story is brewing — check back soon.
+            </p>
           ) : (
             <>
               {featured && (
@@ -76,21 +86,39 @@ function BlogPage() {
                         loading="eager"
                       />
                     ) : (
-                      <div className="blog-preview-image blog-preview-image-fallback blog-featured-image">No image</div>
+                      <div className="blog-preview-image blog-preview-image-fallback blog-featured-image">
+                        No image
+                      </div>
                     )}
                   </div>
                   <div className="blog-preview-top">
                     <div className="blog-preview-emoji">Top</div>
                     <span className="blog-soon-chip">{featured.status}</span>
                   </div>
-                  <span className="blog-preview-topic">By {featured.author}</span>
+                  <span className="blog-preview-topic">
+                    By {featured.author}
+                  </span>
                   <p className="blog-preview-title">{featured.title}</p>
-                  <p className="blog-preview-summary">{featured.excerpt || "No excerpt provided."}</p>
+                  <p className="blog-preview-summary">
+                    {featured.excerpt || "No excerpt provided."}
+                  </p>
+                  <div className="blog-preview-meta">
+                    <span className="blog-preview-views">
+                      {featured.views || 0} views
+                    </span>
+                    <span className="blog-preview-likes">
+                      {featured.likes || 0} likes
+                    </span>
+                  </div>
                   <button
                     className="blog-preview-read"
                     type="button"
                     onClick={() => {
-                      trackEvent({ type: "post_click", path: `/blog/${featured.slug || featured.id}`, postId: featured.id });
+                      trackEvent({
+                        type: "post_click",
+                        path: `/blog/${featured.slug || featured.id}`,
+                        postId: featured.id,
+                      });
                       navigate(`/blog/${featured.slug || featured.id}`);
                     }}
                   >
@@ -99,8 +127,8 @@ function BlogPage() {
                 </article>
               )}
 
-              {nonFeaturedPosts.length > 0 && (
-                isCarousel ? (
+              {nonFeaturedPosts.length > 0 &&
+                (isCarousel ? (
                   <div className="blog-carousel-wrap">
                     <button
                       className="blog-carousel-btn"
@@ -122,21 +150,41 @@ function BlogPage() {
                                 loading="lazy"
                               />
                             ) : (
-                              <div className="blog-preview-image blog-preview-image-fallback">No image</div>
+                              <div className="blog-preview-image blog-preview-image-fallback">
+                                No image
+                              </div>
                             )}
                           </div>
                           <div className="blog-preview-top">
                             <div className="blog-preview-emoji">New</div>
-                            <span className="blog-soon-chip">{post.status}</span>
+                            <span className="blog-soon-chip">
+                              {post.status}
+                            </span>
                           </div>
-                          <span className="blog-preview-topic">By {post.author}</span>
+                          <span className="blog-preview-topic">
+                            By {post.author}
+                          </span>
                           <p className="blog-preview-title">{post.title}</p>
-                          <p className="blog-preview-summary">{post.excerpt || "No excerpt provided."}</p>
+                          <p className="blog-preview-summary">
+                            {post.excerpt || "No excerpt provided."}
+                          </p>
+                          <div className="blog-preview-meta">
+                            <span className="blog-preview-views">
+                              {post.views || 0} views
+                            </span>
+                            <span className="blog-preview-likes">
+                              {post.likes || 0} likes
+                            </span>
+                          </div>
                           <button
                             className="blog-preview-read"
                             type="button"
                             onClick={() => {
-                              trackEvent({ type: "post_click", path: `/blog/${post.slug || post.id}`, postId: post.id });
+                              trackEvent({
+                                type: "post_click",
+                                path: `/blog/${post.slug || post.id}`,
+                                postId: post.id,
+                              });
                               navigate(`/blog/${post.slug || post.id}`);
                             }}
                           >
@@ -167,21 +215,39 @@ function BlogPage() {
                               loading="lazy"
                             />
                           ) : (
-                            <div className="blog-preview-image blog-preview-image-fallback">No image</div>
+                            <div className="blog-preview-image blog-preview-image-fallback">
+                              No image
+                            </div>
                           )}
                         </div>
                         <div className="blog-preview-top">
                           <div className="blog-preview-emoji">New</div>
                           <span className="blog-soon-chip">{post.status}</span>
                         </div>
-                        <span className="blog-preview-topic">By {post.author}</span>
+                        <span className="blog-preview-topic">
+                          By {post.author}
+                        </span>
                         <p className="blog-preview-title">{post.title}</p>
-                        <p className="blog-preview-summary">{post.excerpt || "No excerpt provided."}</p>
+                        <p className="blog-preview-summary">
+                          {post.excerpt || "No excerpt provided."}
+                        </p>
+                        <div className="blog-preview-meta">
+                          <span className="blog-preview-views">
+                            {post.views || 0} views
+                          </span>
+                          <span className="blog-preview-likes">
+                            {post.likes || 0} likes
+                          </span>
+                        </div>
                         <button
                           className="blog-preview-read"
                           type="button"
                           onClick={() => {
-                            trackEvent({ type: "post_click", path: `/blog/${post.slug || post.id}`, postId: post.id });
+                            trackEvent({
+                              type: "post_click",
+                              path: `/blog/${post.slug || post.id}`,
+                              postId: post.id,
+                            });
                             navigate(`/blog/${post.slug || post.id}`);
                           }}
                         >
@@ -190,8 +256,7 @@ function BlogPage() {
                       </article>
                     ))}
                   </div>
-                )
-              )}
+                ))}
             </>
           )}
         </div>

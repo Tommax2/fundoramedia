@@ -13,7 +13,7 @@ const PACKAGES = [
       "Project positioning & validation",
       "Target audience planning",
       "Project improvement suggestions",
-      "Marketing readiness checklist & roadmap"
+      "Launch readiness checklist & roadmap"
     ],
     deliverables: ["Strategy report", "Action plan document"],
     bestFor: ["Creators & founders starting out", "Project validation stage", "Strategic direction"],
@@ -42,12 +42,12 @@ const PACKAGES = [
   {
     tier: "GOLD PACKAGE",
     medal: "Gold",
-    subtitle: "Full Marketing Management",
-    tagline: "Complete Growth & Performance System",
-    description: "Done-for-you promotion and growth solution.",
+    subtitle: "Full Campaign Management",
+    tagline: "Complete Launch & Performance System",
+    description: "Done-for-you campaign launch and funding growth solution.",
     includes: [
       "Paid advertising management (Meta, TikTok, Google, YouTube)",
-      "Email marketing automation",
+      "Email sequence automation",
       "Audience building & lead generation",
       "Influencer & partnership outreach",
       "Community engagement strategy",
@@ -55,7 +55,7 @@ const PACKAGES = [
       "Post-campaign analytics & support"
     ],
     deliverables: ["Active campaign execution", "Detailed performance reports"],
-    bestFor: ["Serious founders & brands", "High-growth goals", "Maximum exposure", "Full marketing management"],
+    bestFor: ["Serious founders & brands", "High-growth goals", "Maximum exposure", "Full launch management"],
     price: "Contact for pricing",
     tone: "gold"
   }
@@ -65,8 +65,8 @@ function MarketingPackagesSection() {
   return (
     <section className="crowd-packages reveal" id="marketing-packages">
       <div className="crowd-packages-head">
-        <p className="eyebrow">Marketing Packages</p>
-        <h2>From Strategy to Full-Scale Project Growth</h2>
+        <p className="eyebrow">Campaign Packages</p>
+        <h2>From Strategy to Full-Scale Launch Growth</h2>
       </div>
       <div className="crowd-packages-grid">
         {PACKAGES.map((pkg) => (
@@ -101,7 +101,7 @@ function MarketingPackagesSection() {
             <div className="package-price">{pkg.price}</div>
             <a
               className="package-pay-btn"
-              href={`mailto:hello@fundoramedia.com?subject=${encodeURIComponent(`Marketing Package Inquiry – ${pkg.tier}`)}&body=${encodeURIComponent(`Hi Fundoramedia,\n\nI'd like to get started with the ${pkg.tier} (${pkg.price}).\n\nPlease send payment details or next steps.`)}`}
+              href={`mailto:hello@fundoramedia.com?subject=${encodeURIComponent(`Campaign Launch Package Inquiry – ${pkg.tier}`)}&body=${encodeURIComponent(`Hi Fundoramedia,\n\nI'd like to get started with the ${pkg.tier} (${pkg.price}).\n\nPlease send payment details or next steps.`)}`}
             >
               Inquire & Pay
             </a>

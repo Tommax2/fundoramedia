@@ -23,7 +23,7 @@ function BlogSection() {
           <span className="blog-soon-pill">Live now</span>
           <h2 className="blog-teaser-title">The Fundora Blog</h2>
           <p className="blog-teaser-sub">
-            Perspectives on publishing, marketing, and the art of getting your story heard.
+            Perspectives on publishing, campaign launches, and the art of getting your story heard.
           </p>
         </div>
 

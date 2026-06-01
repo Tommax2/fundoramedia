@@ -8,24 +8,24 @@ function HeroSection({ tab, onStart }) {
     ? ["/hero-fund-1.webp", "/hero-fund-2.webp", "/hero-fund-3.webp"]
     : ["/hero-book-1.webp", "/hero-book-2.webp", "/hero-book-3.webp"];
 
-  const eyebrow = isMarketing ? "Digital marketing agency" : "Author marketing studio";
+  const eyebrow = isMarketing ? "Campaign launch studio" : "Author marketing studio";
 
   const heading = isMarketing ? (
-    <>We help creators, founders, and brands <em>promote and grow</em> their projects</>
+    <>We help creators, founders, and brands <em>raise support</em> for their ideas</>
   ) : (
     <>We grow authors who <em>build readers</em> before launch day</>
   );
 
   const copy = isMarketing
-    ? "Through strategic digital marketing — from strategy and branding to paid ads, email automation, and community growth."
-    : "From book positioning and branding to promotion, ads, and media outreach — we build the marketing engine behind your book's success.";
+    ? "Through campaign launch strategy — from story and page setup to paid ads, email sequences, and audience growth."
+    : "From book positioning and branding to promotion, ads, and media outreach — we build the growth engine behind your book's success.";
 
   const statA = isMarketing
-    ? { label: "Clients served", value: "+320" }
+    ? { label: "Launches supported", value: "+320" }
     : { label: "Pre-launch readers", value: "+742" };
 
   const statB = isMarketing
-    ? { label: "Average ROAS", value: "3.8×" }
+    ? { label: "Funding lift", value: "3.8×" }
     : { label: "Email open rate", value: "68%" };
 
   return (

@@ -1,6 +1,6 @@
 export const TABS = [
   { id: "book", label: "Book Marketing" },
-  { id: "marketing", label: "Marketing Services" }
+  { id: "marketing", label: "Campaign Launch" }
 ];
 
 export const BOOK_CATEGORIES = ["All genres", "Fiction", "Non-fiction", "Poetry", "Children's"];

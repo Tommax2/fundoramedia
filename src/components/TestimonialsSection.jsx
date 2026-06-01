@@ -6,7 +6,7 @@ const TESTIMONIALS = [
     role: "Tech Startup Founder",
     quote: "Fundora handled everything from our product page to our Facebook ads. We exceeded our launch targets by 80% within 3 weeks. Their strategy and execution are genuinely world-class.",
     stars: 5,
-    tag: "Launch Marketing"
+    tag: "Campaign Launch"
   },
   {
     name: "Adaeze Okafor",
@@ -18,9 +18,9 @@ const TESTIMONIALS = [
   {
     name: "Marcus Webb",
     role: "Indie Game Developer",
-    quote: "As someone with zero marketing experience, having Fundora run the entire promotion system was a game-changer. Professional, responsive, and laser-focused on results.",
+    quote: "As someone with zero launch experience, having Fundora run the entire campaign system was a game-changer. Professional, responsive, and laser-focused on results.",
     stars: 5,
-    tag: "Launch Marketing"
+    tag: "Campaign Launch"
   },
   {
     name: "Nneka Bello",
@@ -34,14 +34,14 @@ const TESTIMONIALS = [
     role: "SaaS Co-founder",
     quote: "Their team rebuilt our launch messaging and ad funnel in one week. Conversion rate improved immediately, and our CAC dropped month over month.",
     stars: 5,
-    tag: "Launch Marketing"
+    tag: "Campaign Launch"
   },
   {
     name: "Zainab Ibrahim",
     role: "Personal Finance Creator",
     quote: "I needed structure, consistency, and better campaign reporting. Fundora delivered all three and made growth feel predictable instead of random.",
     stars: 5,
-    tag: "Marketing Services"
+    tag: "Campaign Launch"
   },
   {
     name: "Liam Ofori",

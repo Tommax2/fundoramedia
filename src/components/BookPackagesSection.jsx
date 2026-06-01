@@ -63,7 +63,7 @@ const PACKAGES = [
       "Multi-platform promotion",
       "Long-term growth strategy"
     ],
-    deliverables: ["Active promotional campaigns", "Sales growth optimization", "Full marketing management"],
+    deliverables: ["Active promotional campaigns", "Sales growth optimization", "Full promotion management"],
     price: "Starting from $2,000",
     // paystackLink: "https://paystack.com/pay/fundoramedia-book-premium",
     tone: "gold"

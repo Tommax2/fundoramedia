@@ -37,7 +37,7 @@ export async function fetchPublishedPosts() {
   const response = await fetch(`${API_BASE}/api/posts?published=true`);
   if (!response.ok) throw new Error("Failed to load blog posts");
   const posts = await response.json();
-  return Array.isArray(posts) ? posts.map(normalizePost) : [];
+  return Array.isArray(posts) ? posts.map((p) => ({ ...normalizePost(p), views: p.views || 0, likes: p.likes || 0 })) : [];
 }
 
 export async function fetchPostComments(postId) {
@@ -62,6 +62,16 @@ export async function likePost(postId) {
   });
   if (!response.ok) throw new Error("Failed to like post");
   return response.json();
+}
+
+export async function incrementPostView(postId) {
+  try {
+    const response = await fetch(`${API_BASE}/api/posts/${postId}/view`, { method: "POST" });
+    if (!response.ok) return null;
+    return response.json();
+  } catch (_err) {
+    return null;
+  }
 }
 
 export async function trackEvent(payload) {

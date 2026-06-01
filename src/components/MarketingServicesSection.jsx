@@ -9,7 +9,7 @@ const SERVICES = [
       "Market research & audience analysis",
       "Project positioning & competitive insights",
       "Pricing strategy development",
-      "Marketing roadmap creation",
+      "Launch roadmap creation",
       "Offer structuring & optimization"
     ]
   },
@@ -25,7 +25,7 @@ const SERVICES = [
     ]
   },
   {
-    title: "Pre-Promotion Marketing",
+    title: "Pre-Launch Audience Building",
     image: "/svc-fund-3.webp",
     items: [
       "Email list building & audience growth",
@@ -35,7 +35,7 @@ const SERVICES = [
     ]
   },
   {
-    title: "Email Marketing & Automation",
+    title: "Email Sequences & Automation",
     image: "/svc-fund-6.webp",
     items: [
       "Email sequence creation",
@@ -45,7 +45,7 @@ const SERVICES = [
     ]
   },
   {
-    title: "Paid Advertising Management",
+    title: "Paid Traffic Management",
     image: "/hero-fund-3.webp",
     items: [
       "Meta, TikTok, Google & YouTube ads",
@@ -65,7 +65,7 @@ const SERVICES = [
     ]
   },
   {
-    title: "Campaign Management",
+    title: "Live Campaign Management",
     image: "/svc-fund-8.webp",
     items: [
       "Daily performance monitoring",
@@ -75,7 +75,7 @@ const SERVICES = [
     ]
   },
   {
-    title: "Post-Campaign Support",
+    title: "Post-Launch Support",
     image: "/svc-fund-9.webp",
     items: [
       "Customer feedback & surveys",
@@ -93,7 +93,7 @@ function MarketingServicesSection() {
     <section className="crowd-services reveal" id="marketing-services">
       <div className="crowd-services-head">
         <p className="eyebrow">What we do</p>
-        <h2>Marketing Services</h2>
+        <h2>Campaign Launch Services</h2>
       </div>
 
       <div className="service-carousel">

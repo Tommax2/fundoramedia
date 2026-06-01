@@ -19,7 +19,7 @@ const PREVIEW_POSTS = [
   },
   {
     icon: "BM",
-    topic: "Book Marketing",
+    topic: "Book Launch",
     title: "Amazon KDP launch checklist: what to do in the first 7 days",
     summary: "The exact sequence we use with every author client to maximize ranking and early reviews.",
     readTime: "5 min read",
@@ -46,7 +46,7 @@ function BlogTeaser() {
           <span className="blog-soon-pill">Launching soon</span>
           <h2 className="blog-teaser-title">The Fundora Blog</h2>
           <p className="blog-teaser-sub">
-            Expert guides, client stories, and strategies for launch success and book marketing growth - written by people who've done it.
+            Expert guides, client stories, and strategies for campaign launch success and book growth - written by people who've done it.
           </p>
         </div>
 
