@@ -2483,6 +2483,10 @@ body {
     padding: 34px 14px 40px;
   }
 
+  .blog-page-section {
+    padding-top: 4.5rem;
+  }
+
   .blog-teaser-inner {
     gap: 18px;
   }
@@ -2945,30 +2949,31 @@ body {
   display: block;
 }
 
+.about-founder-eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .about-founder-linkedin {
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: 14px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  min-height: 42px;
-  padding: 10px 14px;
-  border-radius: 10px;
-  background: rgba(10, 102, 194, 0.94);
-  color: #fff;
-  font-size: 0.86rem;
-  font-weight: 700;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(10, 102, 194, 0.1);
+  color: #0a66c2;
   text-decoration: none;
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
-  transition: background 0.16s ease, transform 0.16s ease;
+  border: 1px solid rgba(10, 102, 194, 0.22);
+  flex-shrink: 0;
+  transition: background 0.16s ease, transform 0.16s ease, box-shadow 0.16s ease;
 }
 
 .about-founder-linkedin:hover {
-  background: #0a66c2;
+  background: rgba(10, 102, 194, 0.18);
   transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(10, 102, 194, 0.18);
 }
 
 .about-founder-info {
@@ -3723,6 +3728,10 @@ body {
     padding: 32px 14px 36px;
   }
 
+  .blog-page-section {
+    padding-top: 3.75rem;
+  }
+
   .blog-teaser-inner {
     gap: 16px;
   }
@@ -3764,6 +3773,14 @@ body {
 
   .blog-preview-summary {
     font-size: 0.78rem;
+  }
+
+  .blog-preview-grid--multi {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-featured-image {
+    height: 200px;
   }
 
   /* ── About ── */
