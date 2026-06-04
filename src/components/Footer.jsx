@@ -60,7 +60,6 @@ function Footer() {
               <a href="#">About us</a>
               <a href="#">Case studies</a>
               <a href="/blog">Blog</a>
-              <a href="#">Careers</a>
             </div>
             <div className="footer-col">
               <h4>Connect</h4>
