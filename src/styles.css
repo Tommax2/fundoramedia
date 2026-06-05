@@ -1916,12 +1916,17 @@ body {
 .blog-preview-carousel {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(260px, 74vw);
+  grid-auto-columns: 100%;
   gap: 12px;
   overflow-x: auto;
   padding-bottom: 4px;
   scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.blog-preview-carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .blog-preview-carousel .blog-preview-card {
