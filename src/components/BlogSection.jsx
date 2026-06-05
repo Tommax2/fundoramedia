@@ -32,7 +32,7 @@ function BlogSection() {
         ) : posts.length === 0 ? (
           <p style={{ color: "#9db0a4" }}>Our first story is brewing — check back soon.</p>
         ) : (
-          <div className="blog-preview-grid blog-preview-grid--multi">
+          <div className="blog-preview-carousel">
             {previewPosts.map((post) => (
               <article key={post.id} className="blog-preview-card">
                 <div className="blog-preview-image-wrap">

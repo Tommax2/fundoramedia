@@ -127,7 +127,7 @@ function AboutSection() {
         <div className="about-founder">
           <div className="about-founder-photo-wrap">
             <img
-              src="/pic.png"
+              src="/ceo.jpeg"
               alt="Akorede Awokunle, launch funding and book growth consultant"
               className="about-founder-photo"
             />
