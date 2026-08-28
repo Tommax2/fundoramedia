@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function ConsultationSection({ tab }) {
-  const isFund = tab === "fund";
+  const isFund = tab === "marketing" || tab === "fund";
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (event) => {
@@ -16,8 +16,13 @@ function ConsultationSection({ tab }) {
         <p className="eyebrow">Free Consultation</p>
         <h2>{isFund ? "Let's plan your campaign launch strategy" : "Let's plan your book growth strategy"}</h2>
         <p>
-          Share a few details and our team will reach out with the best next steps, timeline, and budget options.
+          Tell us where you are and where you want to go. We’ll reply with clear next steps within one business day.
         </p>
+        <div className="consultation-note">
+          <span>No pressure</span>
+          <span>Clear recommendations</span>
+          <span>Free first call</span>
+        </div>
       </div>
 
       <form className="consultation-form" onSubmit={handleSubmit}>
@@ -62,7 +67,7 @@ function ConsultationSection({ tab }) {
           <textarea name="message" rows="4" placeholder="Tell us about your goals..." required />
         </label>
 
-        <button type="submit">Request Consultation</button>
+        <button type="submit">Book a free consultation</button>
 
         {submitted && <p className="consultation-success">Thanks, your request has been received. We'll contact you shortly.</p>}
       </form>

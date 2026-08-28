@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import LazyBackground from "./LazyBackground";
 
 const SERVICES = [
@@ -50,7 +51,7 @@ const SERVICES = [
 ];
 
 function CrowdfundingServicesSection() {
-  const doubled = [...SERVICES, ...SERVICES];
+  const carouselServices = [...SERVICES, ...SERVICES];
 
   return (
     <section className="crowd-services reveal" id="crowd-services">
@@ -61,8 +62,8 @@ function CrowdfundingServicesSection() {
 
       <div className="service-carousel">
         <div className="service-track">
-          {doubled.map((service, index) => (
-            <article className={`service-card ${index >= SERVICES.length ? "dup-item" : ""}`} key={`${service.title}-${index}`}>
+          {carouselServices.map((service, index) => (
+            <article className="service-card" key={`${service.title}-${index}`} aria-hidden={index >= SERVICES.length}>
               <LazyBackground
                 className="service-image"
                 image={service.image}
@@ -82,15 +83,17 @@ function CrowdfundingServicesSection() {
                     </li>
                   ))}
                 </ul>
-                <button
+                <Link
                   className="service-cta"
-                  onClick={() => document.getElementById("crowd-packages")?.scrollIntoView({ behavior: "smooth" })}
+                  to={`/packages?service=${encodeURIComponent(service.title)}`}
+                  state={{ selectedService: service.title }}
+                  tabIndex={index >= SERVICES.length ? -1 : 0}
                 >
                   Get this service
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                     <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                </button>
+                </Link>
               </div>
             </article>
           ))}

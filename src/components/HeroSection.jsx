@@ -17,8 +17,8 @@ function HeroSection({ tab, onStart }) {
   );
 
   const copy = isMarketing
-    ? "Through campaign launch strategy — from story and page setup to paid ads, email sequences, and audience growth."
-    : "From book positioning and branding to promotion, ads, and media outreach — we build the growth engine behind your book's success.";
+    ? "From story and page setup to paid ads, email sequences, and audience growth—we build campaigns designed to move people."
+    : "From positioning and branding to promotion, ads, and media outreach—we build the growth system behind your book.";
 
   const statA = isMarketing
     ? { label: "Launches supported", value: "+320" }
@@ -40,28 +40,21 @@ function HeroSection({ tab, onStart }) {
       </div>
 
       <div className="hero-panel">
-        <div className="hero-panel-top hero-panel-meta">
-          <strong>Client results</strong>
-          <span>Recent work</span>
+        <div className="hero-gallery" aria-hidden="true">
+          <LazyBackground
+            eager
+            className="hero-gallery-image hero-gallery-image-1"
+            image={heroMedia[0]}
+            fallback="linear-gradient(145deg, #2b2d33, #18191f)"
+          />
         </div>
-        <div className="hero-media-stack" aria-hidden="true">
-          {heroMedia.map((image, index) => (
-            <LazyBackground
-              eager
-              className={`hero-media-card media-${index + 1}`}
-              key={image}
-              image={image}
-              fallback="linear-gradient(145deg, #2b2d33, #18191f)"
-            />
+        <div className="hero-result-row" aria-label="Client results">
+          {[statA, statB].map((stat) => (
+            <div className="hero-result" key={stat.label}>
+              <strong>{stat.value}</strong>
+              <span>{stat.label}</span>
+            </div>
           ))}
-          <div className="hero-stat-chip chip-a">
-            <p>{statA.label}</p>
-            <strong>{statA.value}</strong>
-          </div>
-          <div className="hero-stat-chip chip-b">
-            <p>{statB.label}</p>
-            <strong>{statB.value}</strong>
-          </div>
         </div>
       </div>
     </section>

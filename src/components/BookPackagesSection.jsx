@@ -80,33 +80,24 @@ function BookPackagesSection() {
       <div className="book-packages-grid">
         {PACKAGES.map((pkg) => (
           <article key={pkg.tier} className={`package-card ${pkg.tone}`}>
-            <p className="package-medal">{pkg.medal}</p>
-            <h3>{pkg.tier}</h3>
-            <p className="package-sub">{pkg.subtitle}</p>
-            <p className="package-tagline">"{pkg.tagline}"</p>
-
-            <p className="package-label">Includes</p>
+            <header className="package-card-head">
+              <p className="package-medal">{pkg.medal}</p>
+              <h3>{pkg.subtitle}</h3>
+              <p className="package-desc">{pkg.tagline}</p>
+            </header>
             <ul>
-              {pkg.includes.map((item) => (
+              {pkg.includes.slice(0, 6).map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-
-            <p className="package-label">Deliverables</p>
-            <div className="deliverables">
-              {pkg.deliverables.map((item) => (
-                <span key={item}>+ {item}</span>
-              ))}
-            </div>
-
-            <div className="package-price">{pkg.price}</div>
+            <div className="package-price"><span>Investment</span>{pkg.price}</div>
             <a
               className="package-pay-btn"
               href={pkg.paystackLink || `mailto:hello@fundoramedia.com?subject=${encodeURIComponent(`Book Package Inquiry – ${pkg.tier}`)}&body=${encodeURIComponent(`Hi Fundoramedia,\n\nI'd like to get started with the ${pkg.tier} (${pkg.price}).\n\nPlease send payment details or next steps.`)}`}
               target={pkg.paystackLink ? "_blank" : undefined}
               rel={pkg.paystackLink ? "noopener noreferrer" : undefined}
             >
-              {pkg.paystackLink ? "Pay with Paystack" : "Inquire & Pay"}
+              {pkg.paystackLink ? "Pay with Paystack" : "Choose this package"}
             </a>
           </article>
         ))}

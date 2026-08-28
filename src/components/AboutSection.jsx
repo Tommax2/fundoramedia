@@ -99,30 +99,6 @@ function AboutSection() {
           ))}
         </div>
 
-        {/* Mission */}
-        <div className="about-mission">
-          <svg
-            className="about-mission-quote"
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M9 13c0-3.314 2.686-6 6-6v3c-1.657 0-3 1.343-3 3v1h3v6H9v-7zm13 0c0-3.314 2.686-6 6-6v3c-1.657 0-3 1.343-3 3v1h3v6h-6v-7z"
-              fill="currentColor"
-              opacity="0.25"
-            />
-          </svg>
-          <p>
-            We combine strategy, creative production, and paid media to deliver
-            real results — not just reports. Founded by campaign strategists with hands-on
-            experience across digital platforms and Amazon KDP, we understand
-            what it takes to stand out and convert interest into action.
-          </p>
-        </div>
-
         {/* Founder */}
         <div className="about-founder">
           <div className="about-founder-photo-wrap">
@@ -147,37 +123,17 @@ function AboutSection() {
                 </svg>
               </a>
             </div>
-            <h3 className="about-founder-name">
-              Akorede Awokunle — Launch Funding &amp; Book Growth Strategist
-            </h3>
-            <div className="about-founder-divider" />
+            <h3 className="about-founder-name">Akorede Awokunle</h3>
+            <p className="about-founder-role">Launch Funding &amp; Book Growth Strategist</p>
             <p className="about-founder-bio">
-              Akorede Awokunle is a professional launch funding and book
-              growth strategist with extensive experience helping creators,
-              authors, startups, and entrepreneurs raise support, build demand,
-              and bring their ideas to life.
+              Akorede helps creators, authors, startups, and entrepreneurs build
+              demand, raise support, and bring well-positioned ideas to market.
             </p>
             <p className="about-founder-bio">
-              With a proven track record of 300+ completed projects on Fiverr
-              and over 100 successful launch funding campaigns and author
-              growth consultations, he specializes in end-to-end campaign
-              development, strategic planning, and performance-driven launch
-              execution. Akorede combines storytelling, strategy, and data-driven
-              outreach to maximize funding potential, reader reach, and audience
-              engagement.
+              His work spans more than 300 completed client projects and 100
+              launch and author-growth engagements, combining strategy,
+              storytelling, paid media, and performance-focused execution.
             </p>
-            <p className="about-founder-bio">
-              He is certified in campaign funding strategy, complete Kickstarter
-              campaign management, email strategy, social media
-              promotion, and ads strategy &amp; campaign optimization.
-            </p>
-            <div className="about-founder-tags">
-              <span>Launch Funding</span>
-              <span>Book Growth</span>
-              <span>Email Strategy</span>
-              <span>Social Media</span>
-              <span>Paid Ads</span>
-            </div>
           </div>
         </div>
 

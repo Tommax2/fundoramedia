@@ -30,10 +30,9 @@ function DiscoverSection({ id, categories, selectedCategory, onCategory, title, 
             <p>{subtitle || "Projects we've delivered results for"}</p>
           </div>
           <div className="section-head-actions">
-            <div className="portfolio-switch" role="group" aria-label="Portfolio switch">
-              <span className="portfolio-switch-active">Client work</span>
-              <button type="button" onClick={onViewAll}>Our services</button>
-            </div>
+            <button className="portfolio-view-services" type="button" onClick={onViewAll}>
+              View services <span aria-hidden="true">→</span>
+            </button>
           </div>
         </div>
 
@@ -51,15 +50,13 @@ function DiscoverSection({ id, categories, selectedCategory, onCategory, title, 
                 <h4>{spotlight.title}</h4>
                 <p>{spotlight.meta}</p>
                 <span className="portfolio-result-pill">
-                  <svg width="11" height="11" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M6 0l1.5 4h4l-3.2 2.3 1.2 4L6 8 2.5 10.3l1.2-4L.5 4h4z"/></svg>
                   {spotlight.result}
                 </span>
               </div>
-              <div className="portfolio-service-chip">{spotlight.service}</div>
             </article>
 
             <div className="grid">
-              {cards.map((card, index) => (
+              {cards.slice(1, 5).map((card, index) => (
                 <article className="card" key={card.title} style={{ animationDelay: `${index * 70}ms` }}>
                   <LazyBackground
                     className={`thumb ${card.tone}`}
@@ -73,7 +70,6 @@ function DiscoverSection({ id, categories, selectedCategory, onCategory, title, 
                     <h4>{card.title}</h4>
                     <p>{card.meta}</p>
                     <span className="portfolio-result-pill sm">
-                      <svg width="10" height="10" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M6 0l1.5 4h4l-3.2 2.3 1.2 4L6 8 2.5 10.3l1.2-4L.5 4h4z"/></svg>
                       {card.result}
                     </span>
                   </div>
