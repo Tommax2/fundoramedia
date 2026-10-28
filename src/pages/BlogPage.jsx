@@ -6,14 +6,10 @@ import Footer from "../components/Footer";
 import TestimonialsSection from "../components/TestimonialsSection";
 import AboutSection from "../components/AboutSection";
 import FaqSection from "../components/FaqSection";
-import { TABS } from "../data/constants";
 
 function BlogPage() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [tab, setTab] = useState(
-    () => localStorage.getItem("fundora_tab") || "book",
-  );
   const carouselRef = useRef(null);
   const navigate = useNavigate();
 
@@ -42,16 +38,7 @@ function BlogPage() {
     <div className="app-shell">
       <div className="ambient a1" />
       <div className="ambient a2" />
-      <TopNav
-        tabs={TABS}
-        tab={tab}
-        onTabChange={(id) => {
-          setTab(id);
-          localStorage.setItem("fundora_tab", id);
-          navigate("/");
-        }}
-        onLaunch={() => navigate("/")}
-      />
+      <TopNav />
 
       <section className="blog-teaser blog-page-section">
         <div className="blog-teaser-inner blog-page-inner">

@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import TopNav from "../components/TopNav";
+import ModeSwitcher from "../components/ModeSwitcher";
 import BookPackagesSection from "../components/BookPackagesSection";
 import MarketingPackagesSection from "../components/MarketingPackagesSection";
 import Footer from "../components/Footer";
-import { TABS } from "../data/constants";
 
 function PackagesPage() {
   const [tab, setTab] = useState(() => localStorage.getItem("fundora_tab") || "book");
-  const navigate = useNavigate();
-
   const handleTabChange = (id) => {
     setTab(id);
     localStorage.setItem("fundora_tab", id);
@@ -38,12 +35,8 @@ function PackagesPage() {
     <div className="app-shell">
       <div className="ambient a1" />
       <div className="ambient a2" />
-      <TopNav
-        tabs={TABS}
-        tab={tab}
-        onTabChange={handleTabChange}
-        onLaunch={() => navigate("/packages")}
-      />
+      <TopNav />
+      <ModeSwitcher tab={tab} onChange={handleTabChange} />
 
       {tab === "book" && <BookPackagesSection />}
       {tab === "marketing" && <MarketingPackagesSection />}

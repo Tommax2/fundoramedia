@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import TopNav from "../components/TopNav";
 import Footer from "../components/Footer";
-import { TABS } from "../data/constants";
 import {
   fetchPublishedPosts,
   fetchPostComments,
@@ -61,9 +60,6 @@ function setLikedPosts(ids) {
 function BlogPostPage() {
   const { slugOrId } = useParams();
   const navigate = useNavigate();
-  const [tab, setTab] = useState(
-    () => localStorage.getItem("fundora_tab") || "book",
-  );
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -153,16 +149,7 @@ function BlogPostPage() {
     <div className="app-shell">
       <div className="ambient a1" />
       <div className="ambient a2" />
-      <TopNav
-        tabs={TABS}
-        tab={tab}
-        onTabChange={(id) => {
-          setTab(id);
-          localStorage.setItem("fundora_tab", id);
-          navigate("/");
-        }}
-        onLaunch={() => navigate("/")}
-      />
+      <TopNav />
 
       <section className="blog-teaser" style={{ paddingTop: "7rem" }}>
         <div className="blog-teaser-inner">

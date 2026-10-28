@@ -35,7 +35,7 @@ function HeroSection({ tab, onStart }) {
         <h1>{heading}</h1>
         <p className="hero-copy">{copy}</p>
         <div className="hero-actions">
-          <button className="hero-primary" onClick={onStart}>Get started</button>
+          <button className="hero-primary" onClick={onStart}>Explore our services</button>
         </div>
       </div>
 

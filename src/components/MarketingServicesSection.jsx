@@ -111,13 +111,7 @@ function MarketingServicesSection() {
                 <h3>{service.title}</h3>
                 <ul>
                   {service.items.map((item) => (
-                    <li key={item}>
-                      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
-                        <circle cx="6.5" cy="6.5" r="6.5" fill="#065F46" opacity="0.12"/>
-                        <path d="M3.5 6.5l2 2 4-4" stroke="#065F46" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      {item}
-                    </li>
+                    <li key={item}>{item}</li>
                   ))}
                 </ul>
                 <Link
@@ -127,9 +121,6 @@ function MarketingServicesSection() {
                   tabIndex={index >= SERVICES.length ? -1 : 0}
                 >
                   Get this service
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
                 </Link>
               </div>
             </article>

@@ -11,7 +11,7 @@ function ConsultationSection({ tab }) {
   };
 
   return (
-    <section className="consultation reveal" id={isFund ? "crowd-consultation" : "book-consultation"}>
+    <section className="consultation reveal" id="consultation">
       <div className="consultation-intro">
         <p className="eyebrow">Free Consultation</p>
         <h2>{isFund ? "Let's plan your campaign launch strategy" : "Let's plan your book growth strategy"}</h2>

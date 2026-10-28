@@ -5,12 +5,13 @@ import FaqSection from "./components/FaqSection";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import TopNav from "./components/TopNav";
+import ModeSwitcher from "./components/ModeSwitcher";
 import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
 import ServicesPage from "./pages/ServicesPage";
 import PackagesPage from "./pages/PackagesPage";
 import AboutPage from "./pages/AboutPage";
-import { TABS } from "./data/constants";
+import HomeFlowSection, { HomeReviewCta } from "./components/HomeFlowSection";
 
 function HashScrollHandler() {
   const location = useLocation();
@@ -72,15 +73,13 @@ function HomePage() {
     <div className="app-shell">
       <div className="ambient a1" />
       <div className="ambient a2" />
-      <TopNav
-        tabs={TABS}
-        tab={tab}
-        onTabChange={handleTabChange}
-        onLaunch={() => navigate("/packages")}
-      />
-      <HeroSection tab={tab} onStart={() => navigate("/packages")} />
+      <TopNav />
+      <ModeSwitcher tab={tab} onChange={handleTabChange} />
+      <HeroSection tab={tab} onStart={() => navigate("/services")} />
+      <HomeFlowSection tab={tab} />
       <TestimonialsSection />
       <FaqSection />
+      <HomeReviewCta tab={tab} />
       <Footer />
     </div>
   );
