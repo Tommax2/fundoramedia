@@ -1,41 +1,25 @@
 import React from "react";
 import LazyBackground from "./LazyBackground";
 
-function HeroSection({ tab, onStart }) {
-  const isMarketing = tab === "marketing";
-
-  const heroMedia = isMarketing
-    ? ["/hero-fund-1.webp", "/hero-fund-2.webp", "/hero-fund-3.webp"]
-    : ["/hero-book-1.webp", "/hero-book-2.webp", "/hero-book-3.webp"];
-
-  const eyebrow = isMarketing ? "Campaign launch studio" : "Author marketing studio";
-
-  const heading = isMarketing ? (
-    <>We help creators, founders, and brands <em>raise support</em> for their ideas</>
-  ) : (
-    <>We grow authors who <em>build readers</em> before launch day</>
-  );
-
-  const copy = isMarketing
-    ? "From story and page setup to paid ads, email sequences, and audience growth—we build campaigns designed to move people."
-    : "From positioning and branding to promotion, ads, and media outreach—we build the growth system behind your book.";
-
-  const statA = isMarketing
-    ? { label: "Launches supported", value: "+320" }
-    : { label: "Pre-launch readers", value: "+742" };
-
-  const statB = isMarketing
-    ? { label: "Funding lift", value: "3.8×" }
-    : { label: "Email open rate", value: "68%" };
-
+function HeroSection({ onStart }) {
   return (
     <section className="hero reveal">
       <div className="hero-left">
-        <p className="eyebrow">{eyebrow}</p>
-        <h1>{heading}</h1>
-        <p className="hero-copy">{copy}</p>
+        <p className="eyebrow">Crowdfunding launch studio</p>
+        <h1>We help creators, founders &amp; authors <em>hit their crowdfunding goal</em></h1>
+        <p className="hero-copy">
+          Kickstarter and Indiegogo campaigns, run end to end: strategy,
+          pre-launch audience, campaign page, ads and backer outreach.
+        </p>
         <div className="hero-actions">
-          <button className="hero-primary" onClick={onStart}>Explore our services</button>
+          <button className="hero-primary" onClick={onStart}>Book a free campaign review</button>
+          <a className="hero-secondary" href="#testimonials">See our work</a>
+        </div>
+        <div className="hero-platforms" aria-label="Crowdfunding platforms supported">
+          <span>We launch on</span>
+          <strong>Kickstarter</strong>
+          <strong>Indiegogo</strong>
+          <strong>Other platforms</strong>
         </div>
       </div>
 
@@ -44,17 +28,13 @@ function HeroSection({ tab, onStart }) {
           <LazyBackground
             eager
             className="hero-gallery-image hero-gallery-image-1"
-            image={heroMedia[0]}
-            fallback="linear-gradient(145deg, #2b2d33, #18191f)"
+            image="/hero-fund-1.webp"
+            fallback="linear-gradient(145deg, #dcebe4, #f4f7f4)"
           />
         </div>
         <div className="hero-result-row" aria-label="Client results">
-          {[statA, statB].map((stat) => (
-            <div className="hero-result" key={stat.label}>
-              <strong>{stat.value}</strong>
-              <span>{stat.label}</span>
-            </div>
-          ))}
+          <div className="hero-result"><strong>100+</strong><span>Campaigns launched</span></div>
+          <div className="hero-result"><strong>7 yrs</strong><span>Launch experience</span></div>
         </div>
       </div>
     </section>

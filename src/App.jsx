@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import TestimonialsSection from "./components/TestimonialsSection";
-import FaqSection from "./components/FaqSection";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import TopNav from "./components/TopNav";
-import ModeSwitcher from "./components/ModeSwitcher";
 import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
 import ServicesPage from "./pages/ServicesPage";
@@ -61,25 +59,17 @@ function RevealObserver({ tab }) {
 }
 
 function HomePage() {
-  const [tab, setTab] = useState(() => localStorage.getItem("fundora_tab") || "book");
   const navigate = useNavigate();
-
-  const handleTabChange = (id) => {
-    setTab(id);
-    localStorage.setItem("fundora_tab", id);
-  };
 
   return (
     <div className="app-shell">
       <div className="ambient a1" />
       <div className="ambient a2" />
       <TopNav />
-      <ModeSwitcher tab={tab} onChange={handleTabChange} />
-      <HeroSection tab={tab} onStart={() => navigate("/services")} />
-      <HomeFlowSection tab={tab} />
+      <HeroSection onStart={() => navigate("/services#consultation")} />
+      <HomeFlowSection />
       <TestimonialsSection />
-      <FaqSection />
-      <HomeReviewCta tab={tab} />
+      <HomeReviewCta />
       <Footer />
     </div>
   );
