@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import LazyBackground from "./LazyBackground";
 
 function HeroSection({ onStart }) {
@@ -13,7 +14,7 @@ function HeroSection({ onStart }) {
         </p>
         <div className="hero-actions">
           <button className="hero-primary" onClick={onStart}>Book a free campaign review</button>
-          <a className="hero-secondary" href="#testimonials">See our work</a>
+          <Link className="hero-secondary" to="/blog">See campaigns we&rsquo;ve worked on</Link>
         </div>
         <div className="hero-platforms" aria-label="Crowdfunding platforms supported">
           <span>We launch on</span>

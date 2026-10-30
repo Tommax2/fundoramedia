@@ -26,6 +26,7 @@ function TopNav() {
     { label: "Services", to: "/services" },
     { label: "Our work", to: "/#testimonials" },
     { label: "Pricing", to: "/packages" },
+    { label: "Blog", to: "/blog" },
     { label: "About", to: "/about" },
     { label: "Contact", href: "mailto:hello@fundoramedia.com" },
   ];

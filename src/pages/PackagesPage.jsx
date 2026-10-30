@@ -6,7 +6,7 @@ import MarketingPackagesSection from "../components/MarketingPackagesSection";
 import Footer from "../components/Footer";
 
 function PackagesPage() {
-  const [tab, setTab] = useState(() => localStorage.getItem("fundora_tab") || "book");
+  const [tab, setTab] = useState(() => localStorage.getItem("fundora_tab") || "marketing");
   const handleTabChange = (id) => {
     setTab(id);
     localStorage.setItem("fundora_tab", id);

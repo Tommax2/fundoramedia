@@ -32,7 +32,7 @@ function Footer() {
             <a href="https://www.linkedin.com/in/akorede-awokunle-6bba18214" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a
               className="footer-instagram"
-              href="https://www.instagram.com/reel/DbsV4LvpV0F/?srtk=dmowb2xqdmMxamFr"
+              href="https://www.instagram.com/fundoramedia/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="View Fundoramedia on Instagram"
